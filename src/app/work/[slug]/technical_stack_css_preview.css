@@ -1,0 +1,116 @@
+/* Technical Stack Section - Gray Background Area */
+.grayBackgroundWrapper {
+  width: 100%;
+  background-color: #f5f5f5;
+  margin-top: 44rem; /* Spacing from 'How to Control' section to Background Start (Adjusted to 420px as req or keeping flow?) Req says 420px below */
+  /* User requested 420px from 'How to Control' end to background start. 
+     Wait, how to control section has margin-top 44rem. The gap after it?
+     Let's handle margin on this wrapper.
+  */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering content wrapper */
+}
+
+.technicalStackContainer {
+  width: 100%;
+  padding: 0 26.1rem; /* Match global wrapper padding */
+  padding-top: 14.5rem; /* 145px from background top to Title */
+  padding-bottom: 20rem; /* Space before footer or end */
+}
+
+.stackHeader {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom to content: 105px from Subtitle bottom? 
+     User said: "Title and Subtitle ... 145px below bg start. Subtitle 105px below (from subtitle) Tech Stack start."
+  */
+  margin-bottom: 10.5rem; /* 105px */
+}
+
+/* Reusing Helvetica Bold 20px */
+.stackTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Reusing Helvetica Regular 20px #868686 */
+.stackSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #868686;
+}
+
+.stackList {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem; /* 55px between categories */
+}
+
+.stackCategory {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Title: Regular 20px #1e1e1e */
+.stackCategoryTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Items: Light 18px #1e1e1e */
+.stackItem {
+  font-family:
+    'Helvetica', sans-serif; /* Light is handled via font-family definition usually or font-weight 300? User said "Explanation Font: Helvetica Light". 
+     Global css defines 'Helvetica'? 
+     Let's check if 'Helvetica Light' needs specific weight or family name.
+     In globals, we mapped Light font file but usually to weight 300.
+     User provided specific rule: "font-family: 'Helvetica Light'; font-weight: 400;" 
+     But wait, our globals mapped everything to 'Helvetica'.
+     Let's try weight 300 first if it maps to Light, or use explicit family if available.
+     Actually user memory says: "Explanation Font: font-family: "Helvetica Light"; ... line-height: 169% ... color #1E1E1E"
+     I should check checks global.css mapping.
+  */
+  font-weight: 300; /* Usually Light */
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .grayBackgroundWrapper {
+    margin-top: 60px; /* Reduced gap */
+  }
+
+  .technicalStackContainer {
+    padding: 60px 20px; /* Reduced padding */
+    padding-top: 60px;
+  }
+
+  .stackHeader {
+    margin-bottom: 40px;
+  }
+
+  .stackList {
+    gap: 30px;
+  }
+
+  .stackTitle,
+  .stackSubtitle,
+  .stackCategoryTitle {
+    font-size: 16px; /* User rule: titles fixed px */
+  }
+
+  .stackItem {
+    font-size: 16px; /* User rule: body text fixed px */
+  }
+}

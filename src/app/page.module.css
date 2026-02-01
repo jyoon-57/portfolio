@@ -1,0 +1,224 @@
+/* Main Wrapper */
+.wrapper {
+  width: 100%;
+  padding: 0 26.1rem; /* Side padding only. Top/Bottom handled by Flex layout. */
+}
+
+/* 
+  Intro Section 
+  - Height: At least 100vh (Full Viewport)
+  - Layout: Flex Column
+  - Content: Header (Top), Hero (Middle/Flexible), Titles (Bottom)
+*/
+.introSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 6rem;
+  padding-bottom: 6rem; /* Equal spacing from bottom */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* Margin removed in favor of Flex justification */
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.nav {
+  display: flex;
+  gap: 8.4rem;
+}
+
+.nav a {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+/* Hero */
+.hero {
+  /* 
+    Pushed to center by parent's justify-content: space-between.
+    No specific margins needed.
+  */
+  display: flex;
+  align-items: center;
+}
+
+.hero p {
+  font-weight: 300;
+  font-size: 4rem;
+  line-height: 1.69;
+  color: var(--foreground);
+}
+
+/* Title Row at Bottom of Intro */
+.titleRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two Columns */
+  gap: 5rem;
+  width: 100%;
+}
+
+.categoryTitle {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: var(--foreground);
+}
+
+/* 
+  Gallery Section 
+  - Starts 51px below the fold (81px - 30px)
+*/
+.gallerySection {
+  margin-top: 5.1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Matching Title Columns */
+  gap: 5rem;
+  width: 100%;
+  padding-bottom: 10rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Gap handled in link now */
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background-color: #eee;
+  overflow: hidden; /* For zoom or overlay effects */
+}
+
+/* Hover Effect: Darken on hover */
+.projectLink:hover .imageWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Darken factor */
+  transition: background-color 0.3s ease;
+}
+
+.projectImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projectLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.projectInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: var(--foreground);
+}
+
+.projectDate {
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: var(--secondary);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .introSection {
+    /* Mobile Layout Symmetry: 3rem (30px) top and bottom */
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .header {
+    /* FORCE ROW Layout on Mobile */
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+
+  .nav {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+
+  .hero p {
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .titleRow {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    gap: 20px;
+    padding-bottom: 0;
+  }
+
+  .gallerySection {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+
+  .categoryTitle {
+    font-size: 16px;
+  }
+
+  /* Typography Adjustments (Mobile Only) */
+  .projectTitle {
+    font-size: 16px; /* Reverted to 16px */
+    line-height: 1.4;
+  }
+
+  .projectDate {
+    font-size: 14px; /* Reverted to 14px */
+    line-height: 1.4;
+  }
+}

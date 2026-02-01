@@ -1,0 +1,2916 @@
+/* Wrapper matching main page */
+.wrapper {
+  width: 100%;
+  padding: 0 26.1rem;
+}
+
+.introSection {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.nav {
+  display: flex;
+  gap: 8.4rem;
+}
+
+.nav a {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--foreground);
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.interactiveArea {
+  margin-top: 8rem;
+  position: relative;
+  cursor: default;
+
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroQuestion {
+  font-size: 5rem;
+  line-height: 1.2;
+  color: var(--foreground);
+  margin-bottom: 8rem;
+}
+
+.heroQuestionLight {
+  font-weight: 300;
+  display: block;
+}
+
+.heroQuestionBold {
+  font-weight: 700;
+  display: block;
+}
+
+.bodyText {
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: var(--foreground);
+  max-width: 54.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+  position: relative;
+}
+
+.firstPara {
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.interactiveArea:hover .firstPara {
+  transform: translateY(-3.4rem);
+}
+
+.hiddenText {
+  position: absolute;
+  top: 9.7rem;
+  left: 50.1rem;
+  width: 58rem;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1.69;
+  color: #868686;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+.interactiveArea:hover .hiddenText {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.arrowContainer {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  cursor: pointer;
+}
+
+.arrowIcon {
+  width: 4rem;
+  height: 2rem;
+  color: var(--foreground);
+}
+
+.footer {
+  margin-top: 10rem;
+  padding-bottom: 6rem;
+}
+
+/* Full Width Video Section */
+.videoSection {
+  width: 100%;
+}
+
+.videoElement {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  /* 
+     Crop Request: Top 42rem, Bottom 32rem.
+  */
+  clip-path: inset(42rem 0 32rem 0);
+  margin-top: -42rem;
+  margin-bottom: -32rem;
+
+  transform-origin: center;
+}
+
+/* 
+  Project Info Section 
+  - Width: Same as title/body (701px).
+  - Alignment: Right aligned (attached to right margin).
+  - Margin top: 15rem (Visual gap).
+*/
+.projectInfoSection {
+  width: 100%;
+  padding: 0 26.1rem; /* Global padding */
+  margin-top: 15rem;
+  margin-bottom: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align content to the right */
+}
+
+.projectInfoContent {
+  width: 70.1rem; /* 701px */
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  text-align: left; /* Content inside is left aligned */
+}
+
+.projectTitle {
+  font-family: 'Helvetica', sans-serif;
+  color: #1e1e1e;
+  font-size: 5.5rem; /* 55px */
+  line-height: 1.1; /* 110% */
+  letter-spacing: 0.165rem; /* 1.65px - Applied primarily to first part, but consistent usually */
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Force line break? Or let it wrap? Image shows explicit break. */
+}
+
+.titleBold {
+  font-weight: 700;
+  /* 
+     Reduce to align with bottom line (AUDIO CONTROL SYSTEM).
+     Previous: 0.165rem was too wide.
+     New: 0.12rem.
+  */
+  letter-spacing: 0.12rem;
+  white-space: nowrap; /* Ensure one line */
+}
+
+.titleRegular {
+  font-weight: 400;
+  /* 
+     Reduce letter-spacing to match width of the top line.
+     Top has 19 chars + wide spacing.
+     Bottom has 20 chars. To match width, use tighter spacing.
+     Try 0 or slightly negative.
+  */
+  letter-spacing: -0.05rem;
+  white-space: nowrap; /* Ensure one line */
+}
+
+.projectDescription {
+  /* Body Text: Regular Font (Global: Helvetica, 20px, 169%) */
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+
+  width: 100%; /* Fill the 701px container */
+}
+
+/* Mobile Adjustments */
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .introSection {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .logo {
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+
+  .nav {
+    gap: 20px;
+    font-size: 16px;
+  }
+
+  .nav a {
+    font-size: 16px;
+  }
+
+  .interactiveArea {
+    margin-top: 40px;
+  }
+
+  .heroQuestion {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .bodyText {
+    font-size: 16px;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .interactiveArea:hover .firstPara {
+    transform: none;
+  }
+  .hiddenText {
+    display: none;
+  }
+
+  /* Reset video crop on mobile */
+  .videoElement {
+    clip-path: inset(21.875vw 0 16.667vw 0);
+    margin-top: -21.875vw;
+    margin-bottom: -16.667vw;
+  }
+
+  /* Project Info Mobile */
+  .projectInfoSection {
+    padding: 0 20px;
+    margin-top: 60px;
+    align-items: flex-start; /* Left align on mobile usually */
+  }
+
+  .projectInfoContent {
+    width: 100%; /* Full width */
+  }
+
+  .projectTitle {
+    font-size: 32px; /* Smaller for mobile */
+  }
+
+  .titleBold {
+    /* 
+      Desktop ratio: 0.12rem / 5.5rem = 0.0218em 
+    */
+    letter-spacing: 0.0218em;
+  }
+
+  .titleRegular {
+    /* 
+      Desktop ratio: -0.05rem / 5.5rem = -0.0091em 
+    */
+    letter-spacing: -0.0091em;
+  }
+
+  .projectDescription {
+    font-size: 16px;
+  }
+}
+
+/* 
+  Why Hand-Gestures Section 
+  - Margin Top: 67.1rem (671px) from Project Info.
+  - Layout: Image Left, Text Right.
+*/
+.whyHandGesturesSection {
+  width: 100%;
+  padding: 0 26.1rem;
+  margin-top: 67.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.handGestureImage {
+  width: 71.1rem; /* 711px */
+  height: 31rem; /* 310px */
+  /* Remove distorted sizing (was 231% height), use cover */
+  background: url(/handgesture.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.whyTextColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* No specific width given for this text block, but it is attached to right. */
+  /* Let's constrain it reasonably or leave flex. */
+  max-width: 60rem;
+}
+
+.sectionHeader {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reusing similar font styles or defining specific ones */
+.sectionTitleBlock {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-bottom: 0;
+}
+
+.sectionSubtitleBlock {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #868686;
+}
+
+.sectionBodyBlock {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* 
+  Why Control Audio Section
+  - Margin Top: 38.9rem (389px) from Image bottom.
+*/
+.whyControlAudioSection {
+  width: 100%;
+  padding: 0 26.1rem;
+  margin-top: 38.9rem;
+  margin-bottom: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.controlAudioLeft {
+  max-width: 50rem;
+}
+
+.controlAudioRight {
+  width: 50.9rem; /* 509px */
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.controlItem {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile responsive for these new sections */
+@media (max-width: 768px) {
+  .whyHandGesturesSection,
+  .whyControlAudioSection {
+    flex-direction: column;
+    padding: 0 20px;
+    margin-top: 60px;
+    gap: 40px;
+  }
+
+  .whyTextColumn,
+  .controlAudioRight {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .handGestureImage {
+    width: 100%;
+    height: 200px; /* Resize for mobile */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* 
+  Visuals Section
+  - Margin Top: 44rem (440px) from "Music and dance..." section.
+  - Structure: Top Image -> Text Content (412px Gap) -> Bottom Image.
+*/
+.visualsSection {
+  width: 100%;
+  margin-top: 44rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.visualTopImage {
+  width: 100%;
+  height: 52.2rem; /* 522px */
+  background: url(/mvisual1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+.visualContentGap {
+  width: 100%;
+  height: 41.2rem; /* 412px Gap */
+  padding: 0 26.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center the text in the gap */
+  background-color: #c54f4f; /* Requested background */
+}
+
+.visualTextLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transform: translateY(3.8rem); /* Shift down 38px */
+}
+
+.visualTextRight {
+  /* Aligned to right, simple body text */
+  transform: translateY(3.8rem); /* Shift down 38px */
+}
+
+/* Reusing section block styles for font consistency, but if specific positioning needed: */
+.visualBodyText {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #ffffff; /* Changed to white */
+  width: 50.1rem; /* 501px */
+}
+
+/* Override title/subtitle colors for this section specifically */
+.visualTextLeft .sectionTitleBlock,
+.visualTextLeft .sectionSubtitleBlock {
+  color: #ffffff;
+}
+
+.visualBottomImage {
+  width: 100%;
+  height: 58.5rem; /* 585px */
+  background: url(/mvisual2.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+/* Mobile responsive for visuals */
+@media (max-width: 768px) {
+  .visualsSection {
+    margin-top: 60px;
+    margin-bottom: 20rem; /* Match spacing of previous section */
+  }
+
+  .visualTopImage,
+  .visualBottomImage {
+    height: 250px; /* Smaller height for mobile */
+  }
+
+  .visualContentGap {
+    height: auto;
+    padding: 40px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  /* Reset fonts for mobile */
+  .sectionTitleBlock,
+  .sectionSubtitleBlock,
+  .sectionBodyBlock,
+  .visualBodyText {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%; /* Reset fixed widths */
+    max-width: 100%;
+  }
+
+  .sectionTitleBlock {
+    margin-bottom: 5px;
+  }
+
+  /* Reset layout position for visual text on mobile */
+  .visualTextLeft,
+  .visualTextRight {
+    transform: translateY(0); /* Reset large desktop shift */
+    margin-bottom: 15px; /* Add spacing between stacked items */
+  }
+}
+
+/* 
+  How to Control Section 
+  - Margin Top: 44rem (440px)
+  - Layout: Header -> List of Items (Gap 205px)
+*/
+.howToControlSection {
+  width: 100%;
+  padding: 0 26.1rem;
+  margin-top: 44rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.controlHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem; /* 100px from header to first item */
+}
+
+/* Items List */
+.controlList {
+  display: flex;
+  flex-direction: column;
+  gap: 20.5rem; /* 205px */
+}
+
+.controlRow {
+  display: flex;
+  align-items: flex-end; /* Text box bottom aligned with video bottom */
+}
+
+.controlVideo {
+  width: 71.1rem;
+  height: 71.1rem;
+  object-fit: cover;
+  background-color: #000; /* Placeholder */
+}
+
+.controlContent {
+  margin-left: 8.9rem; /* 89px gap */
+  flex-grow: 1; /* Occupy remaining width (approx 598px) */
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0; /* Aligned to bottom */
+}
+
+.controlTextGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* Titles usually have margin, or we can add small gap */
+}
+
+.controlFunctionName {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.controlFunctionDesc {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.controlCodeGroup {
+  margin-top: 6.4rem; /* 64px from text */
+  display: flex;
+  justify-content: space-between; /* Left and Right chunks */
+  font-family: 'Pretendard Variable', 'Helvetica', sans-serif;
+  font-size: 1rem; /* 10px */
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.37);
+  line-height: normal;
+  white-space: pre-wrap; /* Preserve formatting */
+}
+
+.codeBlock {
+  /* Half width or auto? "Left and Right". Let's assume natural width */
+  max-width: 48%;
+}
+
+/* Mobile Responsive for Control Section */
+@media (max-width: 768px) {
+  .howToControlSection {
+    margin-top: 60px;
+    padding: 0 20px;
+  }
+
+  .controlHeader {
+    margin-bottom: 40px;
+  }
+
+  .controlList {
+    gap: 60px;
+  }
+
+  .controlRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .controlVideo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .controlContent {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .controlCodeGroup {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .codeBlock {
+    max-width: 100%;
+  }
+
+  .controlFunctionName,
+  .controlFunctionDesc {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/* Technical Stack Section - Gray Background Area */
+.grayBackgroundWrapper {
+  width: 100%;
+  background-color: #f5f5f5; /* Changed from #ffffff to #f5f5f5 */
+  margin-top: 42rem; /* Adjusted to 420px as req */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering content wrapper */
+}
+
+.technicalStackContainer {
+  width: 100%;
+  padding: 0 26.1rem; /* Match global wrapper padding */
+  padding-top: 14.5rem; /* 145px from background top to Title */
+  padding-bottom: 0; /* Remove padding to control spacing via margin of next element */
+}
+
+.stackHeader {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10.5rem; /* 105px */
+}
+
+/* Reusing Helvetica Bold 20px */
+.stackTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Reusing Helvetica Regular 20px #868686 */
+.stackSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #868686;
+}
+
+.stackList {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem; /* 55px between categories */
+}
+
+.stackCategory {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Category Title: Regular 20px #1e1e1e */
+.stackCategoryTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Items: Light 18px #1e1e1e */
+.stackItem {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 300; /* Light */
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .grayBackgroundWrapper {
+    margin-top: 60px; /* Reduced gap */
+  }
+
+  .technicalStackContainer {
+    padding: 60px 20px; /* Reduced padding */
+    padding-top: 60px;
+  }
+
+  .stackHeader {
+    margin-bottom: 40px;
+  }
+
+  .stackList {
+    gap: 30px;
+  }
+
+  .stackTitle,
+  .stackSubtitle,
+  .stackCategoryTitle {
+    font-size: 16px; /* User rule: titles fixed px */
+  }
+
+  .stackItem {
+    font-size: 16px; /* User rule: body text fixed px */
+  }
+}
+
+/* System Architecture Section */
+.systemArchitectureContainer {
+  width: 100%;
+  padding: 0 26.1rem;
+  background-color: #f5f5f5; /* Added background color */
+  margin-top: 0; /* Removed margin to close gap */
+  padding-top: 33.4rem; /* Converted margin to padding for continuity */
+  padding-bottom: 20rem; /* Converted margin to padding so background extends to bottom */
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.systemArchHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.sysArchTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.sysArchSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #868686;
+}
+
+/* Input Section */
+.inputSection {
+  margin-top: 8.6rem;
+  height: 29.2rem; /* Enforce height since absolute children */
+  position: relative;
+  width: 100%;
+}
+
+.inputVideoWrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 58.6rem;
+  height: 29.2rem;
+  transform: translateX(-50%) skewX(-20deg);
+  transform-origin: center;
+  /* border: 0.5px solid #1e1e1e; Removed as requested */
+  overflow: hidden;
+}
+
+.inputVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skewX(20deg) scale(1.3); /* Un-skew and scale to cover gaps */
+  transform-origin: center;
+}
+
+.inputTextWrapper {
+  position: absolute;
+  bottom: 0;
+  /* Left = Center + HalfWidth + SkewOffset(Top) */
+  /* Calculation: 50% + 29.3rem (Half width) + 5.4rem (Approx skew offset at top) = 50% + 34.7rem */
+  left: calc(50% + 34.7rem);
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-bottom: -0.5rem; /* Optical alignment */
+}
+
+/* User rule: Title = Bold 20px */
+.inputTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* User rule: Desc = Light 18px */
+.inputBody {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400; /* Instructions said "Light" but memory says font-family "Helvetica Light"? */
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .inputSection {
+    margin-top: 40px;
+    height: auto;
+    flex-direction: column;
+    /* Reset from absolute layout */
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .inputVideoWrapper {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%; /* Fluid on mobile */
+    height: 50vw; /* Aspect ratio? */
+    transform: none; /* Remove skew on mobile for simplicity? Or keep? */
+    margin-bottom: 20px;
+    border: none;
+  }
+
+  .inputVideo {
+    transform: none;
+  }
+
+  .inputTextWrapper {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .inputTitle {
+    font-size: 16px;
+  }
+
+  .inputBody {
+    font-size: 16px;
+  }
+}
+
+/* Layout Boxes */
+.architectureBox {
+  width: 100%; /* 1398px inside padding */
+  border: 0.3px solid #868686;
+  position: relative;
+}
+
+.handsBox {
+  height: 195.6rem;
+  margin-top: 7.7rem; /* 77px from input section */
+}
+
+.mainBox {
+  height: 36rem;
+  margin-top: 8.9rem; /* 89px */
+}
+
+.choirBox {
+  height: 61.4rem;
+  margin-top: 8.9rem; /* 89px */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .architectureBox {
+    width: 100%;
+    margin-top: 40px;
+    height: auto;
+    min-height: 200px; /* Placeholder height for mobile */
+  }
+
+  .handsBox {
+    height: 100rem; /* Adjusted for mobile scale if needed, or keep auto */
+    margin-top: 40px;
+  }
+
+  .mainBox,
+  .choirBox {
+    height: auto;
+    min-height: 200px;
+    margin-top: 20px;
+  }
+}
+
+/* Hands.js Internals */
+.boxLabel {
+  /* Absolute positioning as requested: 13px left, 9px top */
+  position: absolute;
+  top: 0.9rem;
+  left: 1.3rem;
+  padding: 0;
+
+  /* Typography */
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  line-height: 1.69; /* 169% */
+  font-style: normal;
+  color: #1e1e1e;
+}
+
+.innerBox {
+  border: 0.3px solid #868686;
+  width: 125.8rem; /* 1398 - 70*2 = 1258px (approx margin) */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.dataPreprocessingBox {
+  height: 44.8rem; /* Visual estimate */
+  margin-top: 5rem;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.innerTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: normal;
+  color: #1e1e1e;
+  margin-bottom: 0.8rem;
+}
+
+.innerSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #868686;
+  margin-bottom: 6rem;
+}
+
+.innerList {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.innerListItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itemTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #1e1e1e;
+}
+
+.itemDesc {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  color: #1e1e1e;
+  line-height: 1.4;
+}
+
+/* Gesture Interpretation & Grid */
+/* Gesture Interpretation & Grid */
+.gestureSection {
+  position: relative;
+  width: 125.8rem; /* Match innerBox width */
+  margin: 0 auto;
+  margin-top: 6rem; /* Gap from Data Box */
+  margin-bottom: 2rem; /* Gap to Grid */
+  height: 18rem; /* Height for the transition area */
+  /* Remove flex align center to allow absolute positioning */
+}
+
+.gestureTextWrapper {
+  position: absolute;
+  left: calc(50% - 48rem); /* Align with left arrow */
+  right: auto;
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.gestureTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.gestureSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #868686;
+  white-space: nowrap;
+}
+
+/* Branching Arrows */
+.branchingContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Main Vertical Line from Data Box */
+/* Main Vertical Line from Data Box */
+.branchVerticalMain {
+  position: absolute;
+  left: 50%;
+  top: -6rem;
+  height: 18rem; /* 6rem top + 12rem inside (Split at 12rem) */
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+/* Horizontal Split Line */
+/* Horizontal Split Line */
+.branchHorizontal {
+  position: absolute;
+  top: 12rem; /* Split at 12rem */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96rem; /* 48rem offset * 2 */
+  height: 0.3px;
+  background-color: #868686;
+}
+
+/* Vertical Drops to Action Boxes */
+/* Vertical Drops to Action Boxes */
+.branchDropLeft {
+  position: absolute;
+  top: 12rem; /* Start from split */
+  left: calc(50% - 48rem);
+  height: 7.5rem; /* (18-12) + 1.5 extra gap coverage */
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+.branchDropRight {
+  position: absolute;
+  top: 12rem;
+  left: calc(50% + 48rem);
+  height: 7.5rem;
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+/* Arrowheads for drops */
+.branchDropLeft::after,
+.branchDropRight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 0.3rem); /* Center align on line */
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.3px solid #868686;
+  border-right: 0.3px solid #868686;
+  transform: rotate(45deg);
+}
+
+/* Decorational lines can be added via pseudo-elements or SVGs if strictly needed. 
+   For now, simple spacing. The user asked for "lines", I'll consider adding a simple SVG line structure in HTML or borders.
+   Let's add a connector line logic if time permits, or stick to clean layout first. 
+*/
+
+.actionsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 125.8rem; /* Same as innerBox */
+  margin: 0 auto;
+  gap: 4rem; /* Gap between boxes */
+}
+
+.actionBox {
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  height: 52rem; /* Estimate */
+  display: flex;
+  flex-direction: column;
+}
+
+.actionTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+}
+
+.actionSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #868686;
+  margin-bottom: 4rem;
+}
+
+.actionContent {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  color: #1e1e1e;
+  line-height: 1.5; /* Keeping readable line height */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: auto; /* Push to bottom to equalize top/bottom spacing */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .actionsGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .dataPreprocessingBox,
+  .actionBox {
+    height: auto;
+    padding: 20px;
+    width: 100%;
+  }
+}
+
+/* Arrows */
+.arrowInputToData {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.3px; /* True width */
+  background-color: #868686; /* Centered background */
+  height: 12.2rem; /* Reduced to create a gap */
+  top: -7.7rem; /* Start from bottom of input section */
+  z-index: 10;
+  /* Removed border-left */
+}
+
+.arrowInputToData::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 0.3rem); /* Center on 0.3px line */
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.3px solid #868686;
+  border-right: 0.3px solid #868686;
+  transform: rotate(45deg);
+}
+
+/* Main.js Internals */
+.mainInnerBox {
+  width: 125.8rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 5rem;
+  height: 26rem; /* 36rem (parent) - 10rem (margins) */
+  border: 0.3px solid #868686;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content if needed, or just top */
+}
+
+.mainTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1e1e1e;
+  line-height: normal;
+  margin-bottom: 0.8rem;
+}
+
+.mainSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #868686;
+  line-height: normal;
+  margin-bottom: 3rem; /* Spacing before description */
+}
+
+.mainDescription {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #1e1e1e;
+  line-height: 1.69;
+  width: 44.1rem; /* 441px */
+}
+
+.arrowHandsToMain {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -8.9rem; /* Start from bottom of hands.js (gap is 8.9rem) */
+  height: 13.4rem; /* 8.9rem gap + 5rem inner margin - 0.5rem gap */
+  width: 0.3px;
+  background-color: #868686;
+  z-index: 10;
+}
+
+.arrowHandsToMain::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 0.3rem);
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.3px solid #868686;
+  border-right: 0.3px solid #868686;
+  transform: rotate(45deg);
+}
+
+/* Choir.js Specific Styles */
+.arrowMainToChoir {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -8.9rem;
+  height: 25.9rem; /* Bridge gap (8.9) + Margin (5) + To Split (12) = 25.9rem */
+  width: 0.3px;
+  background-color: #868686;
+  z-index: 10;
+}
+
+.choirTopSection {
+  position: relative;
+  width: 125.8rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  height: 18rem;
+}
+
+.choirTextWrapper {
+  position: absolute;
+  left: calc(50% - 48rem);
+  top: 40%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.choirTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #1e1e1e;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.choirSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #868686;
+  white-space: nowrap;
+}
+
+.choirBranchVertical {
+  position: absolute;
+  left: 50%;
+  top: -6rem; /* Connect from top */
+  height: 18rem; /* Split @ 12rem relative to section */
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+.choirBranchHorizontal {
+  position: absolute;
+  top: 12rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96rem;
+  height: 0.3px;
+  background-color: #868686;
+}
+
+.choirDropLeft {
+  position: absolute;
+  top: 12rem;
+  left: calc(50% - 48rem);
+  height: 7.5rem;
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+.choirDropRight {
+  position: absolute;
+  top: 12rem;
+  left: calc(50% + 48rem);
+  height: 7.5rem;
+  width: 0.3px;
+  background-color: #868686;
+  transform: translateX(-50%);
+}
+
+.choirDropLeft::after,
+.choirDropRight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 0.3rem);
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.3px solid #868686;
+  border-right: 0.3px solid #868686;
+  transform: rotate(45deg);
+}
+
+.choirGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 125.8rem;
+  margin: 0 auto;
+  gap: 4rem;
+}
+
+.choirContentBox {
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  height: 38rem; /* Estimate */
+  display: flex;
+  flex-direction: column;
+}
+
+.choirBoxTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #1e1e1e;
+  margin-bottom: 4rem;
+  line-height: normal;
+}
+
+.choirBoxContent {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: #1e1e1e;
+  line-height: 1.69;
+}
+
+/* Case Study Details Layout (Fist Detection etc) */
+.caseStudySection {
+  margin-top: 8.5rem; /* 85px from text above */
+  width: 100%;
+}
+
+.caseStudySeparator {
+  width: 100%;
+  height: 1px; /* Line */
+  border-top: 0.3px solid #868686;
+  margin-bottom: 4rem; /* 40px below line to Title */
+}
+
+.caseStudySeparatorBottom {
+  width: 100%;
+  height: 1px; /* Line */
+  border-top: 0.3px solid #868686;
+  margin-top: 4rem; /* 40px + 25px existing margin = 65px */
+  /* margin-bottom? Not specified, default 0 or let next item spacing handle it */
+}
+
+.caseStudyTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  color: #1e1e1e; /* Assuming black/dark grey */
+  margin-bottom: 6.5rem; /* 65px below title to boxes */
+}
+
+.caseStudyGrid {
+  display: flex;
+  /* justify-content: space-between; Removed to allow gap to control spacing */
+  width: 100%;
+  gap: 6rem; /* 60px gap */
+}
+
+.caseStudyColumn {
+  display: flex;
+  flex-direction: column;
+  width: 48.8rem; /* 488px (473 + 15) */
+}
+
+.caseStudyBox {
+  width: 100%; /* 473px */
+  border: 0.3px solid #868686;
+  padding: 4rem; /* Equal padding */
+  margin-bottom: 2.5rem; /* 25px below box */
+  position: relative; /* Anchor for connector lines */
+}
+
+.connectorLine {
+  position: absolute;
+  top: 100%;
+  width: 45.7rem; /* Reduced from 50rem to raise end point */
+  height: 0.3px;
+  background-color: #868686;
+  transform-origin: 0 0;
+  transform: rotate(45deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .connectorLine {
+    display: none;
+  }
+}
+
+.caseStudyBoxTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin-bottom: 1rem;
+}
+
+.caseStudyBoxContent {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.caseStudyText {
+  width: 100%;
+  padding: 0 4rem; /* Align with box content */
+}
+
+.caseStudyTextTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #1e1e1e;
+  margin-bottom: 1rem;
+}
+
+.caseStudyTextContent {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Wide Block Layout (Chapter 2 Part 2) */
+.wideBlockWrapper {
+  width: 95rem; /* 950px */
+  margin-left: auto; /* Right Align */
+  margin-top: 6.5rem; /* Gap from Title */
+  display: flex;
+  flex-direction: column;
+}
+
+.wideBox {
+  width: 100%;
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  margin-bottom: 2.5rem;
+}
+
+.wideBoxGrid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 3.2rem; /* Calculated 32px gap to fit 419+419 in 870 space */
+}
+
+.wideBoxContentCol {
+  width: 41.9rem; /* 419px */
+  display: flex;
+  flex-direction: column;
+}
+
+.wideBlockSubGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3.2rem; /* Match internal box gap */
+  padding: 0 4rem; /* Align with box content (box uses 4rem padding) */
+  width: 100%;
+}
+
+.wideBlockSubText {
+  width: 41.9rem; /* 419px */
+  margin-bottom: 2.5rem;
+}
+
+/* Specific Dimensions & Spacing Updates */
+.choirBox {
+  height: auto; /* Allow auto height */
+  /* Left/Right margins are auto inside 139.8rem container ~ 7.8rem gap each side */
+  /* We enforce bottom padding to match that approximate visual gap */
+  padding-bottom: 7.8rem;
+}
+
+.choirGrid {
+  display: grid;
+  grid-template-columns: 60.1rem 60.1rem; /* Exact 601px */
+  gap: 4rem; /* 40px gap */
+  width: 124.2rem; /* 60.1*2 + 4 */
+  margin: 0 auto; /* Center in container */
+  /* Top spacing to accommodate drop arrows */
+  margin-top: 2rem;
+}
+
+.choirContentBox {
+  width: 60.1rem;
+  height: 28.1rem; /* 281px */
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Output Section */
+.outputSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.arrowChoirToOutput {
+  width: 0.3px;
+  height: 12rem; /* Visual length */
+  margin-bottom: 2rem; /* Gap between arrow tip and video */
+  background-color: #868686;
+  position: relative;
+}
+
+.arrowChoirToOutput::after {
+  content: '';
+  position: absolute;
+  bottom: -0.1rem; /* Push down slightly to overlap end of line if needed, or 0 */
+  left: 50%;
+  margin-left: -0.3rem; /* Centering 6px box on standard anchor */
+  width: 0.6rem;
+  height: 0.6rem;
+  border-bottom: 0.3px solid #868686;
+  border-right: 0.3px solid #868686;
+  transform: rotate(45deg);
+}
+
+.outputVideoContainer {
+  width: fit-content;
+  margin-top: 0rem;
+  /* Parallelogram shape using clip-path */
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+  background-color: #000; /* fall back */
+}
+
+.outputVideo {
+  width: auto;
+  height: 43.5rem; /* 435px */
+  display: block;
+}
+
+.githubLinkWrapper {
+  margin-top: 26rem; /* 260px gap */
+  text-align: center;
+  margin-bottom: 20rem; /* Bottom buffer */
+}
+
+.githubLink {
+  color: #1e1e1e;
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.69;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+.githubLink:hover {
+  border-bottom: 1px solid #1e1e1e;
+}
+
+/* Magritte Image Section (Full Width Breakout) */
+.magritteSection {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0; /* Changed from 26rem to 0 to abut previous section */
+  margin-bottom: 0;
+  overflow: hidden; /* Prevent horizontal scroll */
+}
+
+/* Pigeon Image Section (Full Width Breakout) */
+.pigeonSection {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 43rem; /* 430px gap */
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+/* Evaluating Techniques Layout */
+.wideColumnWrapper {
+  width: 100%;
+  margin-top: 13.5rem; /* 135px from text above */
+}
+
+.evaluationGrid {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.evaluationBox {
+  width: 66.3rem; /* 663px */
+  height: 43.5rem; /* 435px */
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically? Image shows centered text block? Or top? Text is top aligned usually. Let's assume top with padding. */
+  /* Re-reading image or request: doesn't specify vertical align. Default is top. */
+  justify-content: space-between; /* If title and body are separated */
+  /* Actually image shows Title top, Body below it. Space between usually fine or just flow. */
+  /* Let's use flow (column) and gap. */
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.evaluationBoxTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #000;
+  margin: 0;
+  width: 39.3rem; /* 393px */
+}
+
+.evaluationBoxBody {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #000;
+  margin: 0;
+  width: 39.3rem; /* 393px */
+}
+
+.advantagesSection {
+  margin-top: 4.5rem; /* 45px below left box */
+  width: 66.3rem; /* Match box width */
+  /* "Start point is left box's left edge" -> It's in the flow, so standard left alignment works if width matches or is auto */
+}
+
+.advantagesTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #000;
+  margin-bottom: 2rem;
+}
+
+.advantagesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.advantagesItem {
+  margin-bottom: 0;
+}
+
+.advantagesItem p {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #000;
+  margin: 0;
+}
+
+.magritteImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Collaboration Title Section */
+.collaborationSection {
+  margin-top: 35rem; /* 350px gap */
+  margin-bottom: 10rem;
+  text-align: left;
+}
+
+.collabTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 5rem; /* 50px */
+  line-height: 1.1;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.collabSubtitle {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 5rem; /* 50px */
+  line-height: 1.1;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+/* Collaboration Details (Chapter 1) */
+/* Collaboration Details (Chapter 1) */
+.collabDetailSection {
+  margin-top: 35rem; /* 350px below subtitle */
+  text-align: left;
+  position: relative;
+}
+
+.chapterNum {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 25px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-bottom: 2rem;
+  width: auto;
+  text-align: left;
+}
+
+.chapterTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem; /* 25px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+  text-align: left;
+}
+
+.chapterSubtitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #868686;
+  margin: 0;
+  text-align: left;
+}
+
+/* User instruction: "Below two paragraphs ... touch left margin" -> CHANGED TO RIGHT MARGIN */
+.chapterBody {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  width: 53.9rem; /* 539px */
+  /* Remove margins, alignment handled by Col */
+  margin: 0;
+  margin-bottom: 10rem;
+}
+
+.chapterBody p {
+  margin-bottom: 4rem;
+}
+
+.chapterCase {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.caseWrapper {
+  position: relative; /* Flow normally in Left Col */
+  margin-top: 46.5rem; /* 465px from Subtitle */
+  text-align: left;
+  top: auto;
+  left: auto;
+}
+
+.additionalCaseText {
+  width: 47.7rem;
+  color: #1e1e1e;
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.69;
+  margin-top: 3.6rem;
+}
+
+/* Grid Layout for Chapter 1 */
+.chapterGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.chapterLeftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left Align */
+}
+
+.chapterRightCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right Align Body */
+  padding-top: 6.225rem; /* Vertical alignment with Title */
+}
+
+/* 'Me' Section (Collaboration) */
+.meSection {
+  margin-top: 12rem; /* 120px below Case text */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right align everything initially */
+  width: 100%;
+}
+
+.meLabel {
+  color: #868686;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3rem; /* 30px */
+  font-weight: 400;
+  line-height: 1.69;
+  margin-bottom: 0; /* Align to touch the box */
+  /* Right aligned by parent flex-end */
+}
+
+.meGrid {
+  display: flex;
+  justify-content: flex-end; /* Push content to right margin */
+  gap: 4rem; /* Gap between code and box */
+  width: 100%;
+}
+
+/* Left: Code Column */
+.meCodeColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end; /* Align code text to right or left? Usually code is left aligned box */
+  /* Let's align items to stretch or start. Text inside is code. */
+  align-items: stretch;
+  text-align: left;
+  /* Width: Flexible or fixed? The box has priority. 
+     Let's allow code to fill remaining space or be auto. */
+  flex-grow: 1;
+  padding-top: 5rem; /* Optical alignment with box title */
+}
+
+.codeBlockText {
+  color: #868686;
+  font-family: Consolas, monospace;
+  font-size: 1rem; /* 10px */
+  font-weight: 400;
+  line-height: normal;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.codeSeparator {
+  width: 100%;
+  height: 0.3px;
+  background-color: #868686;
+  margin-top: 8rem; /* Matches box item gap */
+  margin-bottom: 8rem;
+}
+
+/* Right: Box */
+.meBox {
+  width: 74.3rem; /* 663px text + 40px*2 padding = 743px */
+  height: 70.8rem; /* 708px */
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push items to edges */
+}
+
+.meBoxTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400; /* Regular */
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-bottom: 2rem;
+}
+
+.meBoxBody {
+  font-family: 'Helvetica Light', 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+.meBoxItem {
+  width: 66.3rem; /* 663px */
+  display: flex;
+  flex-direction: column;
+}
+
+.boxItemSpacer {
+  margin-top: 8rem;
+}
+
+/* 'AI' Section (Mirrored) */
+.aiSection {
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left align everything */
+  width: 100%;
+}
+
+.aiLabel {
+  color: #868686;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3rem; /* 30px */
+  font-weight: 400;
+  line-height: 1.69;
+  margin-bottom: 0;
+  /* Left aligned by parent flex-start */
+}
+
+.aiGrid {
+  display: flex;
+  justify-content: space-between; /* Box Left, Code Right? Or just flex-start/end */
+  /* If Box is Left and Code is Right. 
+     Me section was flex-end. 
+     Here we want full width distribution? 
+     Let's use space-between or explicitly place them. 
+     Box is on Left. Code is on Right.
+  */
+  justify-content: flex-start;
+  gap: 4rem;
+  width: 100%;
+}
+
+.aiBox {
+  width: 67.6rem; /* 596px text + 40px*2 padding = 676px */
+  /* Height auto or fixed? Me box was fixed. User said "adjust box size accordingly". 
+     Given content amount, maybe auto is safer, or copy height if symmetric? 
+     Let's start with auto/fit-content or fixed if inferred. 
+     User said "repeats Box-Me-Code layout". 
+     I'll set width fixed. Height auto for now unless text implies strict height.
+  */
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.aiCodeColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  flex-grow: 1;
+  padding-top: 5rem;
+}
+
+.splitCodeWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* 'Debugging' Section (Me: Code Left, Box Right, Space Between, Centered) */
+.debuggingSection {
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Label align right */
+  width: 100%;
+}
+
+.debuggingGrid {
+  display: flex;
+  justify-content: space-between; /* Code touches Left, Box touches Right */
+  align-items: center; /* Vertically centered */
+  width: 100%;
+  gap: 4rem; /* Safe gap, though space-between handles main distribution */
+}
+
+.debuggingCode {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  /* Width auto or fit content? Code block determines width. */
+}
+
+.debuggingBox {
+  width: 67.6rem;
+  height: auto; /* Fit content */
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content if min-height exists, otherwise just stack */
+  background-color: transparent;
+}
+
+/* AI Final Review Section */
+.aiReviewSection {
+  margin-top: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Left Label */
+  width: 100%;
+}
+
+.aiReviewGrid {
+  display: flex;
+  justify-content: flex-start; /* Box Left */
+  width: 100%;
+}
+
+.aiReviewBox {
+  width: 67.6rem;
+  height: auto;
+  border: 0.3px solid #868686;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Removed Grid Layout for Chapter 1 as per Left Margin Request */
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Box Layouts */
+  .architectureBox,
+  .innerBox,
+  .dataPreprocessingBox,
+  .actionBox,
+  .mainBox,
+  .choirBox,
+  .mainInnerBox,
+  .handsBox {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    margin-top: 4rem; /* Standardize gaps */
+  }
+
+  .actionsGrid {
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  /* Reset Action Content push */
+  .actionContent {
+    margin-top: 2rem;
+    display: block;
+  }
+
+  /* Typography Reset to PX */
+  .boxLabel {
+    font-size: 16px;
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .innerTitle,
+  .actionTitle,
+  .mainTitle {
+    font-size: 18px; /* Bold title */
+  }
+
+  .innerSubtitle,
+  .actionSubtitle,
+  .mainSubtitle {
+    font-size: 16px; /* Subtitle */
+    margin-bottom: 2rem;
+  }
+
+  .itemTitle {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .innerDescription,
+  .itemDesc,
+  .actionContent,
+  .mainDescription,
+  .actionContent p,
+  .mainDescription p {
+    font-size: 14px; /* Body */
+    line-height: 1.5;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Gesture Section & Arrows */
+  .gestureSection {
+    width: 100%;
+    height: 15rem; /* Gap for arrow */
+    margin-top: 4rem;
+    margin-bottom: 0;
+  }
+
+  .gestureTextWrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: #f5f5f5; /* Optional: hide arrow behind text if strictly needed, but let's see */
+    padding: 1rem;
+    /* Ensure text is above arrow */
+    z-index: 5;
+  }
+
+  .gestureTitle,
+  .gestureSubtitle {
+    font-size: 14px;
+    white-space: normal; /* Allow wrapping */
+  }
+
+  /* Single Arrow Logic */
+  .branchHorizontal,
+  .branchDropLeft,
+  .branchDropRight {
+    display: none;
+  }
+
+  .branchVerticalMain {
+    top: -4rem; /* Connect to Data Box above */
+    height: calc(100% + 4rem); /* Span full gap to Actions */
+  }
+
+  /* Add arrowhead to main vertical line in mobile only */
+  .branchVerticalMain::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 0.3rem);
+    width: 0.6rem;
+    height: 0.6rem;
+    border-bottom: 0.3px solid #868686;
+    border-right: 0.3px solid #868686;
+    transform: rotate(45deg);
+  }
+
+  /* Hands -> Main Arrow */
+  .arrowHandsToMain {
+    top: -4rem;
+    height: 8rem; /* Simplified gap bridge */
+  }
+
+  /* Force display block for main vertical branch */
+  .branchVerticalMain {
+    display: block !important;
+    top: -4rem;
+    height: calc(100% + 4rem);
+  }
+
+  /* Section Title Reset */
+  .sysArchTitle {
+    font-size: 20px !important; /* Slightly larger than box titles */
+  }
+
+  .sysArchSubtitle {
+    font-size: 16px !important;
+  }
+
+  /* Container Reset */
+  .systemArchitectureContainer {
+    width: 100%;
+    overflow-x: hidden; /* Prevent spill */
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 60px; /* Extend gray background on mobile */
+  }
+
+  .systemArchHeader {
+    padding-left: 2rem; /* Align with box padding */
+    margin-bottom: 30px;
+  }
+
+  /* Gesture Text Alignment Fix */
+  .gestureTextWrapper {
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100vw !important; /* Full viewport width to avoid cut-off */
+    right: auto !important;
+    margin-left: 0 !important;
+  }
+
+  /* Choir Mobile Overrides */
+  .choirGrid {
+    grid-template-columns: 1fr !important;
+    margin-top: 2rem !important;
+    width: 100% !important;
+  }
+
+  .choirContentBox {
+    width: 100% !important; /* Fix width issue */
+    height: auto !important;
+    padding: 2rem !important;
+  }
+
+  .choirBox {
+    padding-bottom: 4rem !important; /* Reduce excessive padding */
+  }
+
+  .choirTextWrapper {
+    position: relative !important; /* Switch to flow layout */
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    z-index: 20 !important;
+    margin-top: 4rem !important; /* Space from top arrow */
+  }
+
+  .choirTopSection {
+    width: 100% !important; /* Fix width to prevent off-screen rendering */
+    height: auto !important; /* Let it grow */
+    min-height: 10rem !important;
+    margin-top: 0 !important; /* Handled by wrapper margin */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .choirTitle,
+  .choirSubtitle {
+    color: #1e1e1e !important;
+    display: block !important;
+    font-size: 16px !important;
+    white-space: normal !important;
+    opacity: 1 !important;
+  }
+
+  /* Restore missing box styles */
+  .choirBoxTitle {
+    font-size: 18px !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .choirBoxContent,
+  .choirBoxContent p {
+    font-size: 14px !important;
+  }
+
+  /* Simplify Choir Arrows for Mobile */
+  .choirBranchHorizontal,
+  .choirDropLeft,
+  .choirDropRight {
+    display: none !important;
+  }
+
+  /* Unified Arrow Logic for Mobile */
+  .arrowMainToChoir {
+    display: block !important;
+    top: -4rem !important;
+    height: 17rem !important; /* Extended to emerge from below text wrapper */
+    z-index: 5 !important;
+  }
+
+  .arrowMainToChoir::after {
+    /* Add arrow head for single line */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 0.3rem);
+    width: 0.6rem;
+    height: 0.6rem;
+    border-bottom: 0.3px solid #868686 !important;
+    border-right: 0.3px solid #868686 !important;
+    transform: rotate(45deg);
+    z-index: 10 !important; /* Ensure head is on top of line */
+  }
+
+  /* Remove stale choirBranchVertical styles if any */
+  .choirBranchVertical {
+    display: none !important;
+  }
+
+  /* Output Mobile Overrides */
+  .outputVideoContainer {
+    width: 100% !important;
+    height: auto !important;
+    clip-path: none !important;
+  }
+
+  .outputVideo {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .githubLinkWrapper {
+    margin-top: 4rem !important; /* Reduce gap */
+    margin-bottom: 6rem !important;
+  }
+
+  .githubLink {
+    font-size: 14px !important; /* Resize font */
+  }
+
+  .arrowChoirToOutput {
+    height: 4rem !important; /* Shorten for mobile gap */
+    margin-bottom: 2rem !important;
+  }
+
+  /* Magritte Mobile */
+  .magritteSection {
+    margin-top: 0 !important; /* Remove gap on mobile too */
+  }
+
+  /* Collab Title Mobile */
+  .collaborationSection {
+    margin-top: 10rem !important;
+  }
+
+  .collabTitle,
+  .collabSubtitle {
+    font-size: 3rem !important; /* 30px */
+    line-height: 1.2 !important;
+  }
+
+  /* Chapter 1 Mobile */
+  .collabDetailSection {
+    margin-top: 10rem !important;
+  }
+
+  .chapterGrid {
+    grid-template-columns: 1fr !important;
+    gap: 6rem !important;
+  }
+
+  .chapterRightCol {
+    padding-top: 0 !important;
+  }
+
+  .caseWrapper {
+    margin-top: 6rem !important;
+  }
+
+  /* Collaboration Section Mobile Updates */
+  .collabTitle,
+  .collabSubtitle {
+    font-size: 30px !important;
+    line-height: 1.2;
+  }
+
+  .chapterTitle {
+    font-size: 20px !important;
+    line-height: 1.5;
+  }
+
+  .chapterSubtitle {
+    font-size: 16px !important;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .chapterNum {
+    font-size: 20px !important;
+    margin-bottom: 1rem;
+  }
+
+  .chapterBody {
+    width: 100% !important;
+    font-size: 16px !important;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+  }
+
+  .chapterCase {
+    font-size: 16px !important;
+    line-height: 1.5;
+  }
+
+  .additionalCaseText {
+    width: 100% !important;
+    font-size: 16px !important;
+    margin-top: 2rem !important;
+  }
+
+  /* Case Study Mobile */
+  .caseStudySection {
+    margin-top: 6rem;
+  }
+  .caseStudyGrid {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .caseStudyColumn {
+    width: 100% !important;
+  }
+  .caseStudyBox {
+    padding: 2rem !important;
+  }
+  .caseStudyTitle,
+  .caseStudyBoxTitle,
+  .caseStudyBoxContent,
+  .caseStudyTextTitle,
+  .caseStudyTextContent {
+    font-size: 16px !important;
+  }
+
+  /* Wide Block Mobile */
+  .wideBlockWrapper {
+    width: 100% !important;
+    margin-top: 4rem;
+  }
+  .wideBox {
+    padding: 2rem !important;
+  }
+  .wideBoxGrid {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .wideBoxContentCol {
+    width: 100% !important;
+  }
+  .wideBlockSubGrid {
+    padding: 0 2rem !important;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  .wideBlockSubText {
+    width: 100% !important;
+  }
+
+  /* Me Section Mobile */
+  .meSection {
+    margin-top: 60px;
+    align-items: flex-start; /* Left align */
+  }
+
+  .meLabel {
+    font-size: 20px; /* Resize */
+    margin-bottom: 10px;
+    align-self: flex-end; /* Keep Me right? Or left? Usually right is fine, but maybe inconsistent. Let's keep right */
+    /* Update: User image shows "Me" on right above box. In mobile, if box fills width, Me should probably align right or left. Let's keep right to distinguish. */
+  }
+
+  .meGrid {
+    flex-direction: column-reverse; /* Box first, then Code */
+    gap: 20px;
+  }
+
+  .meBox {
+    width: 100% !important;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .meBoxTitle {
+    font-size: 18px !important;
+    line-height: normal;
+  }
+
+  .meBoxBody {
+    font-size: 16px !important;
+  }
+
+  .meBoxItem {
+    width: 100% !important;
+  }
+
+  .boxItemSpacer {
+    margin-top: 2rem;
+  }
+
+  .meCodeColumn {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .codeBlockText {
+    font-size: 10px;
+    font-family: Consolas, monospace;
+    overflow-x: auto;
+  }
+
+  .codeSeparator {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* AI Section Mobile */
+  .aiSection {
+    margin-top: 60px;
+    align-items: flex-start;
+  }
+
+  .aiLabel {
+    font-size: 20px;
+    margin-bottom: 10px;
+    align-self: flex-start; /* Align left */
+  }
+
+  .aiGrid {
+    flex-direction: column; /* Box first, then Code (HTML order is Box, Code) */
+    gap: 20px;
+  }
+
+  .aiBox {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+  }
+
+  .aiCodeColumn {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .splitCodeWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  /* Reset margins for split code blocks on mobile if needed */
+  .splitCodeWrapper > div {
+    margin-left: 0 !important;
+  }
+
+  /* Debugging Section Mobile */
+  .debuggingSection {
+    margin-top: 60px;
+    align-items: flex-start;
+  }
+
+  /* Reuse meLabel styles but ensure alignment */
+  .debuggingSection .meLabel {
+    align-self: flex-end; /* Keep right aligned */
+  }
+
+  .debuggingGrid {
+    flex-direction: column-reverse; /* Box Top, Code Bottom */
+    gap: 20px;
+    align-items: flex-start; /* Reset center align */
+  }
+
+  /* .debuggingCode reuses or needs reset width */
+  .debuggingCode {
+    width: 100%;
+  }
+
+  .debuggingBox {
+    width: 100% !important;
+    padding: 2rem;
+  }
+
+  /* AI Final Review Mobile */
+  .aiReviewSection {
+    margin-top: 60px;
+    align-items: flex-start;
+  }
+
+  .aiReviewBox {
+    width: 100%;
+    padding: 2rem;
+  }
+}
+
+/* Wide Block Right (Fist Detection Case Study) */
+.wideBlockWrapperRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Right Align Content */
+  margin-top: 6.5rem; /* 65px from Title */
+  width: 100%;
+}
+
+.wideBoxRight {
+  width: 95rem; /* 950px */
+  border: 0.3px solid #868686;
+  padding: 4rem; /* 40px */
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.wideBoxRightRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.wideBoxRightContent {
+  width: 41.9rem; /* 419px */
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+}
+
+/* Sub Texts below box */
+.wideBlockSubGridRight {
+  width: 95rem; /* Match Box Width */
+  padding: 0 4rem; /* Match Box Padding to align inner text */
+  margin-top: 6rem; /* Gap between box and text */
+  display: grid;
+  grid-template-columns: 41.9rem 41.9rem; /* Two columns like box content */
+  justify-content: space-between;
+  row-gap: 6rem; /* Vertical gap between rows */
+}
+
+/* Mobile Response */
+@media (max-width: 768px) {
+  .wideBlockWrapperRight {
+    align-items: flex-start;
+    margin-top: 40px;
+  }
+
+  .wideBoxRight {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .wideBoxRightRow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .wideBoxRightContent {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .wideBlockSubGridRight {
+    width: 100%;
+    padding: 0;
+    margin-top: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* Evaluating Techniques Mobile */
+@media (max-width: 768px) {
+  .wideColumnWrapper {
+    margin-top: 60px; /* Reduced margin */
+    width: 100%;
+  }
+
+  .evaluationGrid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .evaluationBox {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .evaluationBoxTitle {
+    font-size: 18px; /* PX for mobile */
+    width: 100%; /* Reset width constraint */
+    margin-bottom: 0;
+  }
+
+  .evaluationBoxBody {
+    font-size: 16px; /* PX for mobile */
+    width: 100%; /* Reset width constraint */
+  }
+
+  .advantagesSection {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .advantagesTitle {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .advantagesItem p {
+    font-size: 16px;
+  }
+}
+
+/* Immediate Prototyping Section */
+.prototypeWrapper {
+  margin-top: 23.6rem; /* 236px from previous element (Advantages) */
+  width: 100%;
+}
+
+.prototypeContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.prototypeLeft {
+  display: flex;
+  flex-direction: column;
+  width: 62.7rem; /* Explicit width for video container area */
+}
+
+.prototypeTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4.5rem; /* 45px distance to video */
+}
+
+.prototypeVideo {
+  width: 62.7rem; /* 627px */
+  height: auto;
+  border: 0.3px solid #868686;
+  display: block;
+}
+
+.prototypeRight {
+  display: flex;
+  justify-content: flex-end; /* Align to right */
+  gap: 2rem;
+  flex-grow: 1;
+  padding-top: 7.9rem; /* Align Code top with Video top (Title 3.38rem + Margin 4.5rem) */
+}
+
+.codeColumn {
+  display: flex;
+}
+
+.prototypeCodeText {
+  color: #868686;
+  font-family: Consolas, monospace;
+  font-size: 0.95rem; /* 10px responsive */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 169%;
+  white-space: pre;
+  margin: 0;
+}
+
+.issuesSection {
+  margin-top: 4.5rem; /* 45px distance from video */
+  width: 34.8rem; /* 348px width */
+}
+
+.issuesTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  margin-bottom: 2rem;
+}
+
+.issuesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Gap between items same as title-body gap? "본문 1과 본문 2 사이의 간격은 제목과 본문1 간격과 같아" -> Yes */
+}
+
+.issuesItem {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.8rem; /* 18px body */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+/* Mobile Prototype Response */
+@media (max-width: 768px) {
+  .prototypeWrapper {
+    margin-top: 6rem;
+  }
+
+  .prototypeContainer {
+    flex-direction: column;
+  }
+
+  .prototypeLeft {
+    width: 100%;
+  }
+
+  .prototypeVideo {
+    width: 100%;
+  }
+
+  .prototypeRight {
+    display: none; /* Hide code on mobile */
+  }
+
+  .issuesSection {
+    margin-top: 4rem;
+  }
+
+  .issuesTitle {
+    font-size: 18px;
+  }
+
+  .issuesItem {
+    font-size: 16px;
+  }
+}
+
+/* Footer Override if needed */
+.footer {
+  border-top: none !important;
+  /* Ensure no top border */
+}
+
+/* Ensure no rogue separators around prototype */
+.prototypeWrapper {
+  border-bottom: none !important;
+}
