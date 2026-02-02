@@ -1,0 +1,35 @@
+/* Desktop Defaults (matches original inline styles) */
+.arrowContainer {
+  position: fixed;
+  bottom: 6rem;
+  right: 5rem;
+  z-index: 9999;
+  cursor: pointer;
+  width: 4rem; /* Explicit width for container/icon scale */
+  height: 2rem;
+  transition:
+    opacity 0.5s ease,
+    color 0.3s ease;
+}
+
+.arrowIcon {
+  width: 4rem;
+  height: 2rem;
+  display: block;
+}
+
+/* Mobile Resize Logic (max-width: 768px) */
+@media (max-width: 768px) {
+  .arrowContainer {
+    /* Use fixed pixels for mobile to avoid rem scaling issues */
+    width: 40px;
+    height: 20px;
+    bottom: 20px; /* Adjusted padding from bottom */
+    right: 20px; /* Adjusted padding from right */
+  }
+
+  .arrowIcon {
+    width: 40px;
+    height: 20px;
+  }
+}

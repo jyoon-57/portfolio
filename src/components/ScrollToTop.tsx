@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, useCallback, useRef } from 'react';
+import styles from './ScrollToTop.module.css';
 
 // Helper: Extract URL from "url("...")"
 const extractUrl = (bgImage: string) => {
@@ -155,6 +156,35 @@ export default function ScrollToTop() {
       const bgColor = style.backgroundColor;
       const bgImage = style.backgroundImage;
 
+      // 0. Special Check: Specific Images (blue_magritte, pigeon, magritte_ending)
+      // Check <img> source
+      if (el instanceof HTMLImageElement) {
+        const src = el.currentSrc || el.src;
+        if (
+          src.includes('blue_magritte') ||
+          src.includes('pigeon') ||
+          src.includes('magritte_ending')
+        ) {
+          setArrowColor(ALT_COLOR);
+          foundColor = true;
+          break;
+        }
+      }
+      // Check Background Image URL for special keywords
+      if (bgImage && bgImage !== 'none') {
+        const url = extractUrl(bgImage);
+        if (
+          url &&
+          (url.includes('blue_magritte') ||
+            url.includes('pigeon') ||
+            url.includes('magritte_ending'))
+        ) {
+          setArrowColor(ALT_COLOR);
+          foundColor = true;
+          break;
+        }
+      }
+
       // 1. Check for Video
       if (el instanceof HTMLVideoElement) {
         const luma = getPixelBrightness(el, el, x, y);
@@ -165,7 +195,7 @@ export default function ScrollToTop() {
         }
       }
 
-      // 2. Check for Background Image
+      // 2. Check for Background Image (General Luma Check)
       if (bgImage && bgImage !== 'none' && !bgImage.includes('gradient')) {
         // It's an element with a background image (likely div)
         const luma = getPixelBrightness(el, el as HTMLElement, x, y);
@@ -227,16 +257,11 @@ export default function ScrollToTop() {
     <div
       ref={arrowRef}
       onClick={scrollToTop}
+      className={styles.arrowContainer}
       style={{
-        position: 'fixed',
-        bottom: '6rem',
-        right: '5rem', // Moved to 5rem (50px) to be well inside margin area
-        zIndex: 9999,
-        cursor: 'pointer',
         color: arrowColor,
         opacity: isVisible ? 1 : 0,
         pointerEvents: isVisible ? 'auto' : 'none',
-        transition: 'opacity 0.5s ease, color 0.3s ease',
       }}
     >
       <svg
@@ -244,10 +269,7 @@ export default function ScrollToTop() {
         fill="none"
         stroke="currentColor"
         strokeWidth="1.5"
-        style={{
-          width: '4rem',
-          height: '2rem',
-        }}
+        className={styles.arrowIcon}
       >
         <path d="M0 25 L25 0 L50 25" />
       </svg>
