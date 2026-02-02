@@ -953,18 +953,14 @@ function updatePinch(handed, pinch, cxNorm, sm) {
           },
         ],
       },
+
       {
         type: 'magritte-image',
-        src: '/pigeon.png',
+        src: '/pigeon.jpg',
         alt: 'Pigeon',
         wrapperClass: 'pigeonSection',
-        width: 3840, // Assuming similar high res, or need to check file. Will use 3840x2160 standard or similar if unknown, but better to check.
-        // User said "restore", implied it worked before or existed. I'll use a safe large default or check file size.
-        // Actually, let's just use the same as Magritte for now or safe default, but wait, I can check the file size.
-        // Better to check file size first to be accurate.
-        // But for now I will add the properties.
-        width: 3840,
-        height: 2573, // estimated based on typical aspect ratio or previous knowledge, or I'll check.
+        width: 1920,
+        height: 960,
       },
       {
         type: 'collaboration',

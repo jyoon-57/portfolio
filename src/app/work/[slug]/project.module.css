@@ -352,8 +352,9 @@
 .handGestureImage {
   width: 71.1rem; /* 711px */
   height: 31rem; /* 310px */
-  /* Remove distorted sizing (was 231% height), use cover */
-  background: url(/handgesture.jpg) no-repeat center center;
+  background-image: url('/handgesture.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 }
 
@@ -1718,9 +1719,11 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  margin-top: 43rem; /* 430px gap */
-  margin-bottom: 0;
+  margin-top: 43.5rem; /* 435px gap */
+  margin-bottom: 35rem; /* 350px gap */
   overflow: hidden;
+  aspect-ratio: 1920 / 960; /* 2:1 ratio as requested */
+  z-index: 10;
 }
 
 /* Evaluating Techniques Layout */
@@ -2834,7 +2837,7 @@
 .spriteSheetConnectorLine {
   position: absolute;
   left: 44.8rem; /* Same x-position as prototype connector */
-  top: 612rem; /* Start from bottom of dance_video */
+  top: 613.5rem; /* Start from bottom of dance_video */
   width: 0.1rem; /* 1px thin line */
   height: 82.7rem; /* Extends to sprite sheet section top */
   background-color: #868686;
@@ -3213,7 +3216,35 @@
 
 /* Footer Override if needed */
 
-/* Ensure no rogue separators around prototype */
-.prototypeWrapper {
-  border-bottom: none !important;
+/* Ensure no rogue separators around prototype (Mobile) */
+@media (max-width: 768px) {
+  .prototypeWrapper {
+    border-bottom: none !important;
+  }
+
+  .pigeonSection {
+    width: 100%;
+    margin-top: 6rem; /* Standard mobile gap */
+    margin-bottom: 6rem;
+    display: block;
+    position: relative;
+    z-index: 10;
+    clear: both;
+    height: auto;
+    aspect-ratio: auto; /* Reset aspect ratio */
+    min-height: auto;
+  }
+
+  .magritteSection {
+    width: 100%;
+    margin-top: 6rem; /* Standard mobile gap */
+    margin-bottom: 6rem;
+    display: block;
+    position: relative;
+    z-index: 10;
+    clear: both;
+    height: auto;
+    aspect-ratio: auto;
+    min-height: auto;
+  }
 }
