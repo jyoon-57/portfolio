@@ -1,6 +1,7 @@
 'use client';
 
 import { use, useRef } from 'react';
+import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectHero from '@/components/project/ProjectHero';
 import ProjectMedia from '@/components/project/ProjectMedia';
@@ -99,10 +100,14 @@ export default function ProjectDetail({
                 : styles.magritteSection;
             return (
               <div key={idx} className={wrapperClass}>
-                <img
+                <Image
                   src={section.src}
                   alt={section.alt}
                   className={styles.magritteImage}
+                  width={section.width || 3840}
+                  height={section.height || 2856}
+                  sizes="100vw"
+                  style={{ width: '100%', height: 'auto' }}
                 />
               </div>
             );

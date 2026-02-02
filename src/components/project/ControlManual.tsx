@@ -1,72 +1,57 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import styles from '@/app/work/[slug]/project.module.css';
 import { ProjectSection } from '@/data/projects';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 interface ControlManualProps {
   section: Extract<ProjectSection, { type: 'video-grid' }>;
 }
 
 export default function ControlManual({ section }: ControlManualProps) {
-  const controlVideosRef = useRef<(HTMLVideoElement | null)[]>([]);
+  const [activeVideoIndex, setActiveVideoIndex] = useState<number | null>(null);
+  const containerRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const legacyVideoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  // Smart Video Control Logic (Same as page.tsx but scoped)
   useEffect(() => {
     const handleScroll = () => {
-      if (!controlVideosRef.current.length) return;
+      const windowHeight = window.innerHeight;
+      const visibleItems: { index: number; bottom: number }[] = [];
 
-      const videosData = controlVideosRef.current.map((video, index) => {
-        if (!video) return { index, visibleHeight: 0, top: 0, el: null };
-        const rect = video.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
+      // Check visibility of each item
+      containerRefs.current.forEach((container, index) => {
+        if (!container) return;
+        const rect = container.getBoundingClientRect();
 
-        const visibleTop = Math.max(0, rect.top);
-        const visibleBottom = Math.min(windowHeight, rect.bottom);
-        const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+        // Check if visible
+        // Condition: Top is within viewport OR Bottom is within viewport OR it covers the viewport
+        const isVisible =
+          (rect.top >= 0 && rect.top < windowHeight) ||
+          (rect.bottom > 0 && rect.bottom <= windowHeight) ||
+          (rect.top < 0 && rect.bottom > windowHeight);
 
-        return {
-          index,
-          visibleHeight,
-          top: rect.top,
-          el: video,
-        };
-      });
-
-      videosData.forEach(({ el, visibleHeight }) => {
-        if (!el) return;
-        if (visibleHeight > 0 && el.paused) {
-          el.play().catch(() => {});
-        } else if (visibleHeight === 0 && !el.paused) {
-          el.pause();
+        if (isVisible) {
+          visibleItems.push({ index, bottom: rect.bottom });
         }
       });
 
-      const visibleVideos = videosData.filter((v) => v.visibleHeight > 0);
-
-      if (visibleVideos.length === 0) {
-        videosData.forEach(({ el }) => {
-          if (el) el.muted = true;
-        });
+      if (visibleItems.length === 0) {
+        setActiveVideoIndex(null);
         return;
       }
 
-      visibleVideos.sort((a, b) => {
-        if (Math.abs(a.visibleHeight - b.visibleHeight) < 10) {
-          // If similar visibility, prefer bottom-most
-          return b.top - a.top;
-        }
-        return b.visibleHeight - a.visibleHeight;
-      });
+      // If multiple, pick the one with the largest 'bottom' value (visually lowest on screen)
+      // Actually usually "bottom-most" means "last one in flow that is visible".
+      // Sorting by bottom descending.
+      visibleItems.sort((a, b) => b.bottom - a.bottom);
 
-      const activeVideoIndex = visibleVideos[0].index;
-
-      videosData.forEach(({ index, el }) => {
-        if (!el) return;
-        el.muted = index !== activeVideoIndex;
-      });
+      const bestCandidate = visibleItems[0].index;
+      setActiveVideoIndex(bestCandidate);
     };
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleScroll);
+
+    // Initial check
     handleScroll();
 
     return () => {
@@ -74,6 +59,28 @@ export default function ControlManual({ section }: ControlManualProps) {
       window.removeEventListener('resize', handleScroll);
     };
   }, []);
+
+  // Effect to control legacy videos based on active index
+  useEffect(() => {
+    legacyVideoRefs.current.forEach((video, index) => {
+      if (!video) return;
+      if (index === activeVideoIndex) {
+        video.play().catch(() => {});
+        video.muted = false; // Optional? Logic said "muted" before... usually we want sound?
+        // Wait, current request is just playback priority.
+        // Original logic: "muted = index !== activeVideoIndex".
+        // The user request: "only... play". Didn't explicitly say mute others, but implied.
+        // Let's stick to playing. And usually we want sound on the active one if the user enabled it?
+        // Actually, for consistency with YouTube: YouTube starts muted.
+        // The legacy videos are muted by default in the JSX.
+        // Let's keep them muted for autoplay policy unless we implement a sound toggle for them too?
+        // But ControlManual legacy videos didn't have sound toggle buttons?
+        // Looking at previous code, they didn't have sound buttons.
+      } else {
+        video.pause();
+      }
+    });
+  }, [activeVideoIndex]);
 
   return (
     <section className={styles.howToControlSection}>
@@ -84,17 +91,45 @@ export default function ControlManual({ section }: ControlManualProps) {
 
       <div className={styles.controlList}>
         {section.items.map((item, index) => (
-          <div key={index} className={styles.controlRow}>
-            <video
-              ref={(el) => {
-                controlVideosRef.current[index] = el;
-              }}
-              src={item.videoSrc}
-              className={styles.controlVideo}
-              loop
-              playsInline
-              muted
-            />
+          <div
+            key={index}
+            className={styles.controlRow}
+            ref={(el) => {
+              containerRefs.current[index] = el;
+            }}
+          >
+            {item.videoSrc.includes('youtube.com') ||
+            item.videoSrc.includes('youtu.be') ? (
+              <div className={styles.controlVideoEmbed}>
+                <YouTubeEmbed
+                  url={item.videoSrc}
+                  isPlaying={activeVideoIndex === index}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    aspectRatio: 'unset', // Let wrapper control ratio
+                  }}
+                  iframeStyle={
+                    item.title === 'Previous/next track' ||
+                    item.title === 'Play/Pause'
+                      ? { transform: 'translateY(-50%) scale(1.02)' }
+                      : undefined
+                  }
+                />
+              </div>
+            ) : (
+              <video
+                ref={(el) => {
+                  legacyVideoRefs.current[index] = el;
+                }}
+                src={item.videoSrc}
+                className={styles.controlVideo}
+                loop
+                playsInline
+                muted
+                // AutoPlay removed, controlled by effect
+              />
+            )}
             <div className={styles.controlContent}>
               <div className={styles.controlTextGroup}>
                 <h4 className={styles.controlFunctionName}>{item.title}</h4>

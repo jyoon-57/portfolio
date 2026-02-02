@@ -64,7 +64,13 @@ export type ProjectSection =
       title: string;
       subtitle: string;
       // Defines content for the specific SysArch diagram
-      input: { title: string; body: string; videoSrc: string };
+      input: {
+        title: string;
+        body: string;
+        videoSrc: string;
+        width?: number; // Optional image width
+        height?: number; // Optional image height
+      };
       boxes: {
         preprocessing: {
           title: string;
@@ -88,13 +94,20 @@ export type ProjectSection =
         };
         actions: { title: string; subtitle: string; content: string }[]; // 4 action boxes
       };
-      output: { videoSrc: string; githubLink: string };
+      output: {
+        videoSrc: string;
+        githubLink: string;
+        width?: number; // Optional image width
+        height?: number; // Optional image height
+      };
     }
   | {
       type: 'magritte-image';
       src: string;
       alt: string;
       wrapperClass?: string;
+      width?: number;
+      height?: number;
     }
   | {
       type: 'collaboration';
@@ -143,6 +156,7 @@ export type ProjectSection =
           issues?: { title: string; items: string[] };
           // For sprite-sheet layout
           imageSrc?: string;
+          imageDimensions?: { width: number; height: number };
           descriptions?: string[];
           code?: string;
         }[];
@@ -187,7 +201,7 @@ export const projects: ProjectData[] = [
       ],
     },
     media: {
-      heroVideo: '/Gloria perform fin.mp4',
+      heroVideo: 'https://youtube.com/shorts/Moi6y_LImVk',
     },
     projectInfo: {
       title: {
@@ -240,7 +254,7 @@ export const projects: ProjectData[] = [
           {
             title: 'Volume',
             desc: 'pinch gesture with vertical movement<br />in the desired stem area.',
-            videoSrc: '/volume.mp4',
+            videoSrc: 'https://youtube.com/shorts/j1fwl1WMeAA',
             codeBlocks: [
               `const pinchState = {
   Left: { active: false, lastAt: 0, zoneAtOn: null, lastTipY: null },
@@ -317,7 +331,7 @@ function applyPinchVolume(handed, sm) {
           {
             title: 'Seek forward/backward',
             desc: 'right-hand wrist-twist with thumb and little finger extended.',
-            videoSrc: '/Seekforwardbackward.mp4',
+            videoSrc: 'https://youtube.com/shorts/Jh6BlNldvOE',
             codeBlocks: [
               `function wrapPi(a) {
   if (a > Math.PI) a -= 2 * Math.PI;
@@ -386,7 +400,7 @@ function detectYawJog(handed, sm) {
           {
             title: 'Previous/next track',
             desc: 'right-hand horizontal movement',
-            videoSrc: '/Previousnexttrack.mp4',
+            videoSrc: 'https://youtube.com/shorts/ARux1GRyNZk',
             codeBlocks: [
               `function detectSwipe(handed, sm) {
   if (handed !== 'Right') return;
@@ -473,7 +487,7 @@ function detectYawJog(handed, sm) {
           {
             title: 'Play/Pause',
             desc: 'right-hand fist/open',
-            videoSrc: '/PlayPause.mp4',
+            videoSrc: 'https://youtube.com/shorts/F04cIGWnhxI',
             codeBlocks: [
               `function palmCenter(lms) {
   const idx = [0, 5, 9, 13, 17];
@@ -583,7 +597,9 @@ function computeFingerOpenScores(sm) {
         input: {
           title: 'Input',
           body: 'Receiving real-time hand<br />position data via MediaPipe.',
-          videoSrc: '/polarbear_hand.mp4',
+          videoSrc: '/input.jpg',
+          width: 1172,
+          height: 584,
         },
         boxes: {
           preprocessing: {
@@ -657,7 +673,9 @@ function computeFingerOpenScores(sm) {
           },
         },
         output: {
-          videoSrc: '/polarbear_visual.mp4',
+          videoSrc: '/output.jpg',
+          width: 1745,
+          height: 870,
           githubLink:
             'https://github.com/jyoon-57/hand-gesture-driven_audio_control_system',
         },
@@ -666,6 +684,8 @@ function computeFingerOpenScores(sm) {
         type: 'magritte-image',
         src: '/blue_magritte.jpg',
         alt: 'Blue Magritte',
+        width: 3840,
+        height: 2856,
       },
       {
         type: 'collaboration',
@@ -982,7 +1002,7 @@ function updatePinch(handed, pinch, cxNorm, sm) {
               {
                 title: 'Immediate Prototyping',
                 type: 'prototype-video',
-                videoSrc: '/dance_video.mp4',
+                videoSrc: 'https://youtu.be/OjYjraazlvg',
                 codeLeft: `const chorus = document.getElementById('chorus');
 const SINGER_COUNT = 31;
 
@@ -1116,6 +1136,7 @@ function makeAnimations(svgEl, seed = 0) {
                 title: 'Partial Integration of Video-based Methods',
                 type: 'sprite-sheet',
                 imageSrc: '/sprite_sheet.png',
+                imageDimensions: { width: 1234, height: 95 },
                 descriptions: [
                   'Created a sprite sheet by stitching together 20 individual frame images.',
                   'Programmed the system to display specific frames in synchronization with the beat.',

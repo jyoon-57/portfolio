@@ -155,6 +155,29 @@
   transform-origin: center;
 }
 
+.soundToggle {
+  position: absolute;
+  bottom: 3rem;
+  right: 4rem;
+  width: 5rem;
+  height: 5rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .soundToggle {
+    bottom: 1rem; /* 20px */
+    right: 1rem; /* 20px */
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+  }
+}
+
 /* 
   Project Info Section 
   - Width: Same as title/body (701px).
@@ -577,6 +600,20 @@
   height: 71.1rem;
   object-fit: cover;
   background-color: #000; /* Placeholder */
+}
+
+.controlVideoEmbed {
+  width: 71.1rem;
+  height: 70.4rem;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .controlVideoEmbed {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .controlContent {

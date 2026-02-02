@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from '@/app/work/[slug]/project.module.css';
 import { ProjectSection } from '@/data/projects';
 
@@ -20,14 +21,26 @@ export default function SystemArchitecture({
       {/* Input Section */}
       <div className={styles.inputSection}>
         <div className={styles.inputVideoWrapper}>
-          <video
-            className={styles.inputVideo}
-            src={input.videoSrc}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
+          {input.videoSrc.endsWith('.jpg') ||
+          input.videoSrc.endsWith('.png') ||
+          input.videoSrc.endsWith('.jpeg') ? (
+            <Image
+              fill
+              className={styles.inputVideo}
+              src={input.videoSrc}
+              alt={input.title}
+              style={{ objectFit: 'cover' }}
+            />
+          ) : (
+            <video
+              className={styles.inputVideo}
+              src={input.videoSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          )}
         </div>
         <div className={styles.inputTextWrapper}>
           <h4 className={styles.inputTitle}>{input.title}</h4>
@@ -149,16 +162,29 @@ export default function SystemArchitecture({
       <div className={styles.outputSection}>
         <div className={styles.arrowChoirToOutput} />
         <div className={styles.outputVideoContainer}>
-          <video
-            className={styles.outputVideo}
-            src={output.videoSrc}
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            {/* Source is usually implicit from src prop but consistent with other videos */}
-          </video>
+          {output.videoSrc.endsWith('.jpg') ||
+          output.videoSrc.endsWith('.png') ||
+          output.videoSrc.endsWith('.jpeg') ? (
+            <Image
+              width={output.width || 1745}
+              height={output.height || 870}
+              className={styles.outputVideo}
+              src={output.videoSrc}
+              alt="System Output"
+              style={{ width: 'auto', height: '43.5rem' }}
+            />
+          ) : (
+            <video
+              className={styles.outputVideo}
+              src={output.videoSrc}
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              {/* Source is usually implicit from src prop but consistent with other videos */}
+            </video>
+          )}
         </div>
         {output.githubLink && (
           <div className={styles.githubLinkWrapper}>

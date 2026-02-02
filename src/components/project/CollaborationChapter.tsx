@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import styles from '@/app/work/[slug]/project.module.css';
 import { ProjectSection, DialogueBlock } from '@/data/projects';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 interface CollaborationChapterProps {
   section: Extract<ProjectSection, { type: 'collaboration' }>;
@@ -142,13 +144,20 @@ export default function CollaborationChapter({
                         </h4>
                       )}
                       {detail.videoSrc && (
-                        <video
-                          src={detail.videoSrc}
+                        <YouTubeEmbed
+                          url={detail.videoSrc}
                           className={styles.prototypeVideo}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
+                          showSoundToggle={false}
+                          style={{ aspectRatio: '16/9' }} // Horizontal frame
+                          iframeStyle={{
+                            width: '100%',
+                            height: '100%',
+                            aspectRatio: 'unset',
+                            position: 'absolute',
+                            top: '50%',
+                            left: '-0.2%',
+                            transform: 'translateY(-50%) scale(1)', // Zoom in to remove letterboxing (Center Crop)
+                          }}
                         />
                       )}
 
@@ -325,10 +334,13 @@ export default function CollaborationChapter({
                     {/* Left: Image box with descriptions below */}
                     <div className={styles.spriteSheetLeft}>
                       <div className={styles.spriteSheetImageBox}>
-                        <img
+                        <Image
                           src={detail.imageSrc}
                           alt={detail.title}
                           className={styles.spriteSheetImage}
+                          width={detail.imageDimensions?.width || 1234}
+                          height={detail.imageDimensions?.height || 95}
+                          style={{ width: '61.7rem', height: 'auto' }}
                         />
                       </div>
                       {detail.descriptions && (
@@ -357,20 +369,26 @@ export default function CollaborationChapter({
               {/* Gray Background Section - starts 240px below sprite sheet descriptions */}
               {detail.type === 'sprite-sheet' && (
                 <div className={styles.grayBackgroundSection}>
-                  <img
+                  <Image
                     src="/magritte_epilogue.jpg"
                     alt="Magritte Epilogue"
                     className={styles.epilogueImage1}
+                    width={1673}
+                    height={941}
                   />
-                  <img
+                  <Image
                     src="/magritte_epilogue_2.jpg"
                     alt="Magritte Epilogue 2"
                     className={styles.epilogueImage2}
+                    width={1673}
+                    height={947}
                   />
-                  <img
+                  <Image
                     src="/magritte_ending.jpg"
                     alt="Magritte Ending"
                     className={styles.endingImage}
+                    width={2880}
+                    height={2880}
                   />
                 </div>
               )}
