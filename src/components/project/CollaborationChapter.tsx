@@ -75,12 +75,15 @@ export default function CollaborationChapter({
               {/* Conditional Top Separator: Skip for Index 1 or if title is empty/wide-columns specific */}
               {dIdx !== 1 &&
                 detail.title &&
-                detail.type !== 'prototype-video' && (
+                detail.type !== 'prototype-video' &&
+                detail.type !== 'sprite-sheet' && (
                   <div className={styles.caseStudySeparator} />
                 )}
-              {detail.title && detail.type !== 'prototype-video' && (
-                <h4 className={styles.caseStudyTitle}>{detail.title}</h4>
-              )}
+              {detail.title &&
+                detail.type !== 'prototype-video' &&
+                detail.type !== 'sprite-sheet' && (
+                  <h4 className={styles.caseStudyTitle}>{detail.title}</h4>
+                )}
 
               {(!detail.type || detail.type === 'columns') && (
                 <div className={styles.caseStudyGrid}>
@@ -259,6 +262,9 @@ export default function CollaborationChapter({
                         </div>
                       ))}
                     </div>
+
+                    {/* Connector Line from dance_video to sprite sheet */}
+                    <div className={styles.spriteSheetConnectorLine} />
                   </div>
                 )}
               {/* Wide Columns Layout (Evaluating Techniques) */}
@@ -303,12 +309,78 @@ export default function CollaborationChapter({
                         </ul>
                       </div>
                     )}
+
+                    {/* Connector Line from Code-driven box to Prototype section */}
+                    <div className={styles.prototypeConnectorLine} />
                   </div>
                 )}
-              {/* Conditional Bottom Separator for Index 1 */}
-              {dIdx === 1 && detail.type !== 'prototype-video' && (
-                <div className={styles.caseStudySeparatorBottom} />
+              {/* Sprite Sheet Layout */}
+              {detail.type === 'sprite-sheet' && detail.imageSrc && (
+                <div className={styles.spriteSheetWrapper}>
+                  {/* Title */}
+                  {detail.title && (
+                    <h4 className={styles.spriteSheetTitle}>{detail.title}</h4>
+                  )}
+                  <div className={styles.spriteSheetContainer}>
+                    {/* Left: Image box with descriptions below */}
+                    <div className={styles.spriteSheetLeft}>
+                      <div className={styles.spriteSheetImageBox}>
+                        <img
+                          src={detail.imageSrc}
+                          alt={detail.title}
+                          className={styles.spriteSheetImage}
+                        />
+                      </div>
+                      {detail.descriptions && (
+                        <div className={styles.spriteSheetDescriptions}>
+                          {detail.descriptions.map((desc, idx) => (
+                            <p key={idx} className={styles.spriteSheetDesc}>
+                              {desc}
+                            </p>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Right: Code */}
+                    {detail.code && (
+                      <div className={styles.spriteSheetCode}>
+                        <pre className={styles.spriteSheetCodeText}>
+                          {detail.code}
+                        </pre>
+                      </div>
+                    )}
+                  </div>
+                </div>
               )}
+
+              {/* Gray Background Section - starts 240px below sprite sheet descriptions */}
+              {detail.type === 'sprite-sheet' && (
+                <div className={styles.grayBackgroundSection}>
+                  <img
+                    src="/magritte_epilogue.jpg"
+                    alt="Magritte Epilogue"
+                    className={styles.epilogueImage1}
+                  />
+                  <img
+                    src="/magritte_epilogue_2.jpg"
+                    alt="Magritte Epilogue 2"
+                    className={styles.epilogueImage2}
+                  />
+                  <img
+                    src="/magritte_ending.jpg"
+                    alt="Magritte Ending"
+                    className={styles.endingImage}
+                  />
+                </div>
+              )}
+
+              {/* Conditional Bottom Separator for Index 1 */}
+              {dIdx === 1 &&
+                detail.type !== 'prototype-video' &&
+                detail.type !== 'sprite-sheet' && (
+                  <div className={styles.caseStudySeparatorBottom} />
+                )}
             </div>
           ))}
 

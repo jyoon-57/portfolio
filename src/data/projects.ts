@@ -118,7 +118,8 @@ export type ProjectSection =
             | 'wide-block'
             | 'wide-block-right'
             | 'wide-columns'
-            | 'prototype-video'; // differentiate layouts
+            | 'prototype-video'
+            | 'sprite-sheet'; // differentiate layouts
           items?: {
             box: { title: string; content: string };
             text: { title: string; content: string };
@@ -140,6 +141,10 @@ export type ProjectSection =
           codeLeft?: string;
           codeRight?: string;
           issues?: { title: string; items: string[] };
+          // For sprite-sheet layout
+          imageSrc?: string;
+          descriptions?: string[];
+          code?: string;
         }[];
         dialogues: DialogueBlock[];
       }[];
@@ -1106,6 +1111,26 @@ function makeAnimations(svgEl, seed = 0) {
                     'Difficulty in implementing hand-painted textures',
                   ],
                 },
+              },
+              {
+                title: 'Partial Integration of Video-based Methods',
+                type: 'sprite-sheet',
+                imageSrc: '/sprite_sheet.png',
+                descriptions: [
+                  'Created a sprite sheet by stitching together 20 individual frame images.',
+                  'Programmed the system to display specific frames in synchronization with the beat.',
+                ],
+                code: `function computeFrameIndex(seconds, bpm) {
+  const frames = cfg.frames; //20
+  const subdivision = cfg.subdivision;
+  const beats =
+    seconds * (bpm / 60) * subdivision * Math.max(0, Math.abs(signedRate));
+  let idx = Math.floor(beats) % frames; //1비트마다 +1 (0~19)
+  if (signedRate < 0) {
+    idx = (frames - 1 - idx + frames) % frames;
+  }
+  return idx;
+}`,
               },
             ],
             dialogues: [],

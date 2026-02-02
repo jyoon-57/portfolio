@@ -2787,6 +2787,56 @@
   }
 }
 
+/* Prototype Connector Line */
+.prototypeConnectorLine {
+  position: absolute;
+  left: 44.8rem; /* 100px (10rem) right of advantages section start (34.8rem) */
+  top: 124rem; /* Start from bottom of Code-driven box */
+  width: 0.1rem; /* 1px thin line */
+  height: 53.6rem; /* Extends to prototype section top (includes advantages + gap) */
+  background-color: #868686;
+  z-index: 1;
+}
+
+/* Sprite Sheet Connector Line (from dance_video to sprite_sheet) */
+.spriteSheetConnectorLine {
+  position: absolute;
+  left: 44.8rem; /* Same x-position as prototype connector */
+  top: 612.3rem; /* Start from bottom of dance_video */
+  width: 0.1rem; /* 1px thin line */
+  height: 82.5rem; /* Extends to sprite sheet section top */
+  background-color: #868686;
+  z-index: 1;
+}
+
+/* Gray Background Section - starts 240px below sprite sheet descriptions */
+.grayBackgroundSection {
+  position: absolute;
+  left: -26.1rem; /* Extend to cover left margin (261px) */
+  right: -26.1rem; /* Extend to cover right margin (261px) */
+  top: calc(100% + 24rem); /* 240px below sprite sheet wrapper */
+  min-height: 200vh; /* Extend down to contain images */
+  background-color: #f5f5f5;
+  z-index: -1; /* Behind content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 37rem; /* 426px from top of gray background */
+}
+
+.epilogueImage1 {
+  width: 111.5rem; /* 1115px */
+  height: auto;
+  display: block;
+}
+
+.epilogueImage2 {
+  width: 111.5rem; /* 1115px */
+  height: auto;
+  display: block;
+  margin-top: 37rem; /* 340px below first image */
+}
+
 /* Immediate Prototyping Section */
 .prototypeWrapper {
   margin-top: 23.6rem; /* 236px from previous element (Advantages) */
@@ -2807,8 +2857,10 @@
 
 .prototypeTitle {
   font-family: 'Helvetica', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 169%;
   margin-bottom: 4.5rem; /* 45px distance to video */
 }
 
@@ -2849,9 +2901,10 @@
 
 .issuesTitle {
   font-family: 'Helvetica', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
   color: #1e1e1e;
+  line-height: 169%;
   margin-bottom: 2rem;
 }
 
@@ -2862,17 +2915,154 @@
 }
 
 .issuesItem {
-  font-family: 'Helvetica', sans-serif;
-  font-size: 1.8rem; /* 18px body */
-  line-height: 1.69;
+  font-family: 'Helvetica Light', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 169%;
   color: #1e1e1e;
   margin: 0;
 }
 
-/* Mobile Prototype Response */
+/* Sprite Sheet Section Styles - Desktop */
+.spriteSheetWrapper {
+  margin-top: 8.8rem; /* 88px below dance_video */
+  width: 100%;
+}
+
+.spriteSheetTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 169%;
+  margin-bottom: 4.5rem; /* 45px above box */
+}
+
+.spriteSheetContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.spriteSheetLeft {
+  display: flex;
+  flex-direction: column;
+  width: 66.4rem; /* Match proportions */
+}
+
+.spriteSheetImageBox {
+  width: 66.4rem; /* 664px */
+  height: 37rem; /* 370px */
+  border: 0.3px solid #868686;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+.spriteSheetImage {
+  width: 61.7rem; /* 617px */
+  height: auto;
+  display: block;
+}
+
+.spriteSheetDescriptions {
+  margin-top: 4.5rem; /* 45px below box */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.spriteSheetDesc {
+  color: #1e1e1e;
+  font-family: 'Helvetica Light', sans-serif;
+  font-size: 1.8rem; /* 18px - description font */
+  font-weight: 400;
+  line-height: 169%;
+  margin: 0;
+  width: 40.8rem; /* 408px */
+}
+
+.spriteSheetCode {
+  display: flex;
+  align-items: flex-end; /* Align text to bottom */
+  flex-grow: 1;
+  margin-left: 3.5rem; /* 35px from box */
+  height: 37rem; /* Match box height to align bottoms */
+}
+
+.spriteSheetCodeText {
+  color: #868686;
+  font-family: Consolas, monospace;
+  font-size: 1rem; /* Exactly 10px at 1920px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 169%;
+  white-space: pre;
+  margin: 0;
+}
+
+/* Desktop Ending Image */
+.endingImage {
+  width: 100%; /* Full Width */
+  height: auto;
+  display: block;
+  margin-top: 35rem; /* 350px below epilogue 2 */
+}
+
+/* Mobile Response for Narrowing Solutions Section */
 @media (max-width: 768px) {
+  /* Evaluation Boxes (Wide Columns) */
+  .wideColumnWrapper {
+    margin-top: 60px;
+    width: 100%;
+  }
+
+  .evaluationGrid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .evaluationBox {
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .evaluationBoxTitle {
+    font-size: 18px;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .evaluationBoxBody {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .advantagesSection {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .advantagesTitle {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+
+  .advantagesList {
+    width: 100%;
+  }
+
+  .advantagesItem p {
+    font-size: 16px;
+  }
+
+  /* Prototype Section */
   .prototypeWrapper {
-    margin-top: 6rem;
+    margin-top: 60px; /* Fixed px */
   }
 
   .prototypeContainer {
@@ -2881,6 +3071,10 @@
 
   .prototypeLeft {
     width: 100%;
+  }
+
+  .prototypeTitle {
+    font-size: 18px;
   }
 
   .prototypeVideo {
@@ -2892,7 +3086,8 @@
   }
 
   .issuesSection {
-    margin-top: 4rem;
+    margin-top: 40px; /* Fixed px */
+    width: 100%;
   }
 
   .issuesTitle {
@@ -2901,6 +3096,86 @@
 
   .issuesItem {
     font-size: 16px;
+  }
+
+  /* Sprite Sheet Section */
+  .spriteSheetWrapper {
+    margin-top: 60px; /* Fixed px instead of rem */
+  }
+
+  .spriteSheetTitle {
+    font-size: 18px;
+    margin-bottom: 20px; /* Fixed px instead of rem */
+  }
+
+  .spriteSheetContainer {
+    flex-direction: column;
+  }
+
+  .spriteSheetLeft {
+    width: 100%;
+  }
+
+  .spriteSheetImageBox {
+    width: 100%;
+    height: auto;
+    min-height: 150px; /* Reduced for mobile */
+    padding: 0; /* Remove any padding that might cause overflow */
+  }
+
+  .spriteSheetImage {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .spriteSheetDescriptions {
+    margin-top: 20px; /* Fixed px instead of rem */
+    width: 100%;
+  }
+
+  .spriteSheetDesc {
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .spriteSheetCode,
+  .prototypeConnectorLine,
+  .spriteSheetConnectorLine {
+    display: none; /* Hide code and connector lines on mobile */
+  }
+
+  /* Gray Background and Epilogue Images */
+  .grayBackgroundSection {
+    padding-top: 60px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0; /* Stop page exactly at end of content */
+    left: calc(-50vw + 50%);
+    right: calc(-50vw + 50%);
+    width: 100vw;
+    min-height: 0 !important; /* Override desktop 200vh */
+    height: auto; /* Fit content */
+  }
+
+  .epilogueImage1,
+  .epilogueImage2 {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+  }
+
+  .epilogueImage2 {
+    margin-top: 80px; /* Increased spacing between images */
+  }
+
+  .endingImage {
+    width: calc(100% + 4rem); /* Full width ignoring padding */
+    max-width: none;
+    margin-left: 0; /* Remove negative margins (flexbox centers it) */
+    margin-right: 0;
+    margin-top: 60px;
+    margin-bottom: 0; /* Ensure no bottom space */
+    display: block;
   }
 }
 
