@@ -130,11 +130,6 @@
   color: var(--foreground);
 }
 
-.footer {
-  margin-top: 10rem;
-  padding-bottom: 6rem;
-}
-
 /* Full Width Video Section */
 .videoSection {
   width: 100%;
@@ -3217,10 +3212,6 @@
 }
 
 /* Footer Override if needed */
-.footer {
-  border-top: none !important;
-  /* Ensure no top border */
-}
 
 /* Ensure no rogue separators around prototype */
 .prototypeWrapper {

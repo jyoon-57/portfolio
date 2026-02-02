@@ -11,7 +11,6 @@ import ControlManual from '@/components/project/ControlManual';
 import TechStack from '@/components/project/TechStack';
 import SystemArchitecture from '@/components/project/SystemArchitecture';
 import CollaborationChapter from '@/components/project/CollaborationChapter';
-import ProjectFooter from '@/components/project/ProjectFooter';
 import ScrollToTop from '@/components/ScrollToTop';
 import styles from './project.module.css';
 
@@ -125,7 +124,7 @@ export default function ProjectDetail({
       })}
 
       {/* Footer */}
-      <ProjectFooter />
+      {/* Removed ProjectFooter as requested */}
     </>
   );
 }
