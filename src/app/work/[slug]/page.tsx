@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectHero from '@/components/project/shared/ProjectHero';
+import SagaHero from '@/components/project/saga/SagaHero';
 import ProjectMedia from '@/components/project/shared/ProjectMedia';
 import ProjectInfo from '@/components/project/shared/ProjectInfo';
 import SectionStandard from '@/components/project/shared/SectionStandard';
@@ -71,13 +72,19 @@ export default function ProjectDetail({
       <ScrollToTop />
 
       {/* Intro Section */}
-      <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />
+      {slug === 'saga' ? (
+        <SagaHero />
+      ) : (
+        <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />
+      )}
 
       {/* Hero Video Section */}
-      <ProjectMedia ref={videoRef} heroVideo={project.media.heroVideo} />
-
-      {/* Project Info */}
-      <ProjectInfo info={project.projectInfo} />
+      {slug !== 'saga' && (
+        <>
+          <ProjectMedia ref={videoRef} heroVideo={project.media.heroVideo} />
+          <ProjectInfo info={project.projectInfo} />
+        </>
+      )}
 
       {/* Dynamic Sections */}
       {project.sections.map((section, idx) => {

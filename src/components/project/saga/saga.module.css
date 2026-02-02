@@ -1,0 +1,283 @@
+/* Saga Hero Layout */
+.heroContainer {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.firstScreen {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Header Overlay - Aligned with Global Margins */
+.headerWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 6rem 26.1rem 0 26.1rem; /* Top padding 6rem, Side margins 26.1rem */
+  z-index: 20; /* Above image */
+  box-sizing: border-box;
+}
+
+/* Reusing existing Header Styles from project.module.css is tricky via composition 
+   if we don't import them. We will rely on passing styles or basic structure reuse 
+   but since we are in a separate module, we might need to duplicate basic flex layout 
+   for the header specific to this overlay if we can't compose. */
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.logoText {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 8.4rem;
+}
+
+.navLink {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #1e1e1e;
+  text-decoration: none;
+}
+
+/* Main Image - Desktop Version */
+.mainImageDesktop {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transform: translateX(-20px);
+}
+
+/* Main Image - Mobile Version (Hidden on Desktop) */
+.mainImageMobile {
+  display: none;
+}
+
+/* Logo Overlay - Bottom Left (Margin Aligned) */
+.logoWrapper {
+  position: absolute;
+  bottom: 6rem; /* Adjust standard bottom spacing if needed. User didn't specify. */
+  left: 0;
+  width: 100%;
+  padding: 0 26.1rem;
+  box-sizing: border-box;
+  pointer-events: none; /* Allow clicks through */
+  display: flex;
+  justify-content: flex-start; /* Left Aligned */
+  z-index: 10;
+}
+
+.sagaLogo {
+  width: 41.1rem; /* 411px @ 1920 */
+  height: auto;
+}
+
+/* SAGA Introduction Section */
+.introductionSection {
+  position: relative;
+  width: 100%;
+  margin-top: 47rem; /* 470px below RedDot logo */
+  padding: 0 26.1rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  box-sizing: border-box;
+}
+
+/* Left Part - Logo and Description */
+.introLeft {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-start; /* Left aligned to margin */
+}
+
+.sagaMainLogo {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+
+.descriptionText {
+  margin-top: 3.7rem; /* 37px below logo */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.descriptionText p {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+/* Right Part - Award, Client, Team */
+.introRight {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end; /* Group aligned to right margin */
+}
+
+.infoGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Items inside aligned left */
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.infoBlock:not(:first-child) {
+  margin-top: 7.8rem; /* 78px gap between blocks */
+}
+
+.infoTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0 0 0.5rem 0;
+}
+
+.infoContent {
+  font-family: 'Helvetica Light', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .firstScreen {
+    height: 100vh;
+    height: 100dvh; /* Mobile viewport fix */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* ... rest of mobile styles ... */
+
+  /* 데스크탑 이미지 숨김 */
+  .mainImageDesktop {
+    display: none;
+  }
+
+  /* 모바일 이미지 표시 및 중앙 정렬 */
+  .mainImageMobile {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 100vh; /* 화면 높이를 넘지 않도록 */
+  }
+
+  .headerWrapper {
+    padding: 3rem 20px 0 20px; /* Mobile Viewport Padding */
+  }
+
+  .headerContent {
+    flex-direction: row; /* Keep row as per rule */
+  }
+
+  .logoText {
+    font-size: 24px;
+    letter-spacing: normal;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .navLink {
+    font-size: 16px;
+  }
+
+  .logoWrapper {
+    padding: 0 20px;
+    bottom: 3rem; /* 30px? */
+  }
+
+  .sagaLogo {
+    /* Mobile Fixed width? or percentage? */
+    /* 411px is ~21% of 1920. 
+       On mobile (375px), 21% is too small (78px).
+       Let's use a fixed reasonable size for mobile logo visibility. */
+    width: 200px;
+    max-width: 60%;
+  }
+
+  /* Introduction Section Mobile */
+  .introductionSection {
+    margin-top: 60px;
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .introLeft,
+  .introRight {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .descriptionText {
+    margin-top: 20px;
+    gap: 16px;
+  }
+
+  .descriptionText p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .infoBlock:not(:first-child) {
+    margin-top: 40px;
+  }
+
+  .infoTitle {
+    font-size: 18px;
+  }
+
+  .infoContent {
+    font-size: 16px;
+  }
+}
