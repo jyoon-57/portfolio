@@ -2834,9 +2834,9 @@
 .spriteSheetConnectorLine {
   position: absolute;
   left: 44.8rem; /* Same x-position as prototype connector */
-  top: 612.3rem; /* Start from bottom of dance_video */
+  top: 612rem; /* Start from bottom of dance_video */
   width: 0.1rem; /* 1px thin line */
-  height: 82.5rem; /* Extends to sprite sheet section top */
+  height: 82.7rem; /* Extends to sprite sheet section top */
   background-color: #868686;
   z-index: 1;
 }

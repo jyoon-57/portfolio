@@ -3,14 +3,14 @@
 import { use, useRef } from 'react';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
-import ProjectHero from '@/components/project/ProjectHero';
-import ProjectMedia from '@/components/project/ProjectMedia';
-import ProjectInfo from '@/components/project/ProjectInfo';
-import SectionStandard from '@/components/project/SectionStandard';
-import ControlManual from '@/components/project/ControlManual';
-import TechStack from '@/components/project/TechStack';
-import SystemArchitecture from '@/components/project/SystemArchitecture';
-import CollaborationChapter from '@/components/project/CollaborationChapter';
+import ProjectHero from '@/components/project/shared/ProjectHero';
+import ProjectMedia from '@/components/project/shared/ProjectMedia';
+import ProjectInfo from '@/components/project/shared/ProjectInfo';
+import SectionStandard from '@/components/project/shared/SectionStandard';
+import ControlManual from '@/components/project/hand-gesture/ControlManual';
+import TechStack from '@/components/project/shared/TechStack';
+import SystemArchitecture from '@/components/project/hand-gesture/SystemArchitecture';
+import CollaborationChapter from '@/components/project/hand-gesture/CollaborationChapter';
 import ScrollToTop from '@/components/ScrollToTop';
 import styles from './project.module.css';
 

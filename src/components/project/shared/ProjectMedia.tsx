@@ -1,6 +1,6 @@
 import { forwardRef, useRef, useEffect } from 'react';
 import styles from '@/app/work/[slug]/project.module.css';
-import YouTubeEmbed from '../YouTubeEmbed';
+import YouTubeEmbed from '@/components/YouTubeEmbed';
 
 interface ProjectMediaProps {
   heroVideo?: string;
