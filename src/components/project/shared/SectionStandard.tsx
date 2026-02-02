@@ -1,7 +1,6 @@
 import styles from '@/app/work/[slug]/project.module.css';
 import { ProjectSection } from '@/data/projects';
 
-// This component handles 'standard' and '3-col-text' types
 interface SectionStandardProps {
   section: Extract<
     ProjectSection,

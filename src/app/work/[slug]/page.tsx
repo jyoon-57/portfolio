@@ -1,6 +1,7 @@
 'use client';
 
 import { use, useRef } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectHero from '@/components/project/shared/ProjectHero';
@@ -39,7 +40,10 @@ export default function ProjectDetail({
             <br />
             Lee
           </div>
-          {/* ... etc */}
+          <nav className={styles.nav}>
+            <Link href="/#about">About</Link>
+            <Link href="/#contact">Contact</Link>
+          </nav>
         </header>
         <main style={{ marginTop: '10rem' }}>
           <h1 style={{ fontSize: '4rem', marginBottom: '2rem' }}>
