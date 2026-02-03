@@ -783,16 +783,54 @@
 @media (max-width: 768px) {
   .painPoints1Section {
     margin-top: 10rem;
-    padding: 5rem 20px;
+    padding: 5rem 2rem;
+    flex-direction: column-reverse; /* Stack: Text on top, Visuals on bottom */
+    height: auto;
+    gap: 6rem;
+  }
+
+  .painPointsLeft {
+    width: 100%;
+    align-items: center;
   }
 
   .painPointsTopRow {
     flex-direction: column;
     gap: 4rem;
+    width: 100%;
+    align-items: center;
+  }
+
+  .iconSet {
+    width: 100%;
+    align-items: center;
+  }
+
+  .iconImage {
+    width: 160px; /* Fixed px for mobile */
+    height: auto;
+  }
+
+  .iconKeyword {
+    font-size: 16px; /* Fixed px */
+    margin-top: 15px;
+    br {
+      display: none; /* Optional: unwrap text on mobile if needed, or keep */
+    }
   }
 
   .painPointsBottomRow {
     margin-top: 4rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .painPointsBottomRow .iconKeyword {
+    margin-top: 10px;
+  }
+
+  .percentageText {
+    font-size: 60px; /* Adjusted fixed size */
   }
 }
 
@@ -819,4 +857,414 @@
   color: #1e1e1e; /* Body Color */
   line-height: 1.69;
   margin: 0;
+}
+
+@media (max-width: 768px) {
+  .sectionTextGroup {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .sectionName {
+    font-size: 16px; /* Fixed px */
+    margin-bottom: 10px;
+  }
+
+  .sectionBody {
+    font-size: 16px; /* Fixed px */
+    width: 100% !important; /* Override inline style width */
+  }
+}
+
+/* Pain Points 2 Section */
+.painPoints2Section {
+  margin-top: 0; /* Continuous from previous section */
+  padding: 35.7rem 26.1rem 60.6rem 26.1rem; /* Spacing handled by padding now (10 + 50.6 for TASKS gap) */
+  width: 100vw;
+  background-color: #f5f5f5;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+}
+
+.painPoints2Top {
+  display: flex;
+  justify-content: flex-start; /* Left aligned */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .painPoints2Section {
+    margin-top: 0;
+    padding: 5rem 20px 15rem 20px; /* Mobile: 5 + 10 gap extension */
+  }
+}
+
+.painPoints2Bottom {
+  display: flex;
+  margin-top: 11.2rem; /* 112px */
+  justify-content: space-between; /* Left and Right parts at edges */
+  gap: 4rem; /* Min gap just in case */
+}
+
+.pp2Left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything relative to container's center logic */
+  width: fit-content;
+}
+
+.pp2Title {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #868686; /* Subtitle Font */
+  margin: 0 0 4.2rem 0; /* 42px bottom margin to photos (Left Default) */
+  text-align: center;
+}
+
+.pp2RightTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.69;
+  color: #868686; /* Subtitle Font */
+  margin: 0 0 9.1rem 0; /* 91px bottom margin for Right Part */
+  text-align: center;
+}
+
+.pp2Grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem; /* 20px */
+  row-gap: 4rem; /* 40px */
+}
+
+.pp2Set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp2Image {
+  width: 28.9rem; /* 289px */
+  height: 28.9rem; /* 289px */
+  object-fit: cover;
+  border-radius: 2rem; /* Optional: assuming rounded corners from similar designs, check image. If standard square, remove radius. Image shows rounded. */
+}
+
+.pp2Keyword {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #868686;
+  margin-top: 1.4rem; /* 14px */
+  text-align: center;
+}
+
+/* Right Part Styles */
+.pp2Right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.pp2RightSet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pp2RightImage {
+  width: 53.8rem; /* 538px */
+  height: 53.8rem; /* 538px */
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.pp2RightKeyword {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2.5rem; /* 25px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-top: 3.3rem; /* 33px */
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .painPoints2Bottom {
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  .pp2Left {
+    width: 100%;
+  }
+
+  .pp2Title {
+    font-size: 16px; /* Mobile Fix */
+    margin-bottom: 2rem;
+  }
+
+  .pp2Grid {
+    grid-template-columns: 1fr; /* Stack on mobile? or Keep 2x2. User didn't specify, but 289px*2 > mobile width usually. 
+                                   Let's check width. 289*2 + 20 ~ 600px. Too wide for mobile (375px). 
+                                   So stack or shrink. */
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 3rem;
+  }
+
+  .pp2Image {
+    width: 100%; /* Fluid width for grid cells */
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .pp2Keyword {
+    font-size: 14px; /* Mobile Fix */
+    margin-top: 1rem;
+  }
+
+  /* Right Part Mobile */
+  .pp2Right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .pp2RightTitle {
+    font-size: 16px; /* Mobile Fix */
+    margin-bottom: 2rem;
+  }
+
+  .pp2RightSet {
+    width: 100%;
+  }
+
+  .pp2RightImage {
+    width: 100%; /* Full width on mobile */
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .pp2RightKeyword {
+    font-size: 16px;
+    margin-top: 2rem;
+  }
+  .pp2RightKeyword {
+    font-size: 16px;
+    margin-top: 2rem;
+  }
+}
+
+/* TASKS Section */
+.tasksSection {
+  margin-top: 0; /* Continuous from gray background */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background-image: url(/tasks_background.jpg);
+  background-size: cover;
+  background-position: center;
+
+  /* Height Logic:
+     User wants "height slowly decreases as width decreases (sides cropped)".
+     min-height ensures it doesn't get too small on mobile.
+     Using aspect-ratio or just vh can achieve this. 
+     Context section used min-height: 800px / 100vh.
+     Let's start with 100vh or a fixed height that scales.
+  */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.tasksContent {
+  width: 100%;
+  padding: 0 26.1rem;
+  box-sizing: border-box;
+  display: flex; /* Add flex to container to handle internal grouping if needed, or just let Group handle it */
+  justify-content: flex-start;
+  height: 100%; /* Full height to allow vertical centering */
+  align-items: center; /* Center Vertically as requested */
+}
+
+.tasksGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6.5rem; /* 65px Spacing between parts */
+  text-align: left;
+}
+
+.tasksTitle {
+  color: #fff;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3rem; /* 30px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+.tasksBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* User didn't specify gap inside block, assuming lines stack naturally with line-height */
+}
+
+.titleLight {
+  color: #fff;
+  font-family: 'Helvetica Light', sans-serif; /* Mapped from globals.css */
+  font-size: 5rem; /* 50px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1; /* 110% */
+}
+
+.titleHeavy {
+  color: #fff;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 5.5rem; /* 55px */
+  font-style: normal;
+  font-weight: 700; /* Bold */
+  line-height: 1.1; /* 110% */
+}
+
+@media (max-width: 768px) {
+  .tasksSection {
+    margin-top: 0;
+    min-height: 60vh; /* Adjust if needed */
+  }
+
+  .tasksContent {
+    padding: 0 20px;
+  }
+
+  .tasksGroup {
+    gap: 40px; /* Reduced gap for mobile */
+  }
+
+  .tasksTitle {
+    font-size: 16px; /* Mobile Fix */
+  }
+
+  .titleLight {
+    font-size: 24px; /* Mobile Fix */
+  }
+
+  .titleHeavy {
+    font-size: 28px; /* Mobile Fix */
+  }
+  .titleHeavy {
+    font-size: 28px; /* Mobile Fix */
+  }
+}
+
+/* SOLUTION Section */
+.solutionSection {
+  margin-top: 36.1rem; /* 361px */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 26.1rem; /* Standard Padding */
+  box-sizing: border-box;
+}
+
+.solutionTitle {
+  color: #868686; /* TASKS style but gray */
+  font-family: 'Helvetica', sans-serif;
+  font-size: 3rem; /* 30px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.69;
+  margin: 0;
+}
+
+.solutionLogo {
+  margin-top: 6.5rem; /* 65px */
+}
+
+.solutionLogoImg {
+  width: 21.2rem; /* 212px */
+  height: auto;
+  display: block;
+}
+
+.solutionTextGroup {
+  margin-top: 6.5rem; /* 65px */
+  text-align: center;
+}
+
+.solutionTextLight {
+  color: #1e1e1e; /* Title Light style but #1e1e1e */
+  font-family: 'Helvetica Light', sans-serif;
+  font-size: 5rem; /* 50px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.solutionTextHeavy {
+  color: #1e1e1e; /* Title Heavy style but #1e1e1e */
+  font-family: 'Helvetica', sans-serif;
+  font-size: 5.5rem; /* 55px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+@media (max-width: 768px) {
+  .solutionSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .solutionTitle {
+    font-size: 16px;
+  }
+
+  .solutionLogo {
+    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .solutionLogoImg {
+    width: 60%; /* Reasonable mobile size */
+    max-width: 212px;
+  }
+
+  .solutionTextGroup {
+    margin-top: 4rem;
+  }
+
+  .solutionTextLight {
+    font-size: 24px;
+  }
+
+  .solutionTextHeavy {
+    font-size: 28px;
+  }
 }
