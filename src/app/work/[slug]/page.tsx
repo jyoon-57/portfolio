@@ -15,6 +15,10 @@ import SagaPainPoints1 from '@/components/project/saga/SagaPainPoints1';
 import SagaPainPoints2 from '@/components/project/saga/SagaPainPoints2';
 import SagaTasksSection from '@/components/project/saga/SagaTasksSection';
 import SagaSolutionSection from '@/components/project/saga/SagaSolutionSection';
+import SagaAutonomousDrone from '@/components/project/saga/SagaAutonomousDrone';
+import SagaDroneVideo from '@/components/project/saga/SagaDroneVideo';
+import SagaFourProD from '@/components/project/saga/SagaFourProD';
+import SagaSketch from '@/components/project/saga/SagaSketch';
 import ProjectMedia from '@/components/project/shared/ProjectMedia';
 import ProjectInfo from '@/components/project/shared/ProjectInfo';
 import SectionStandard from '@/components/project/shared/SectionStandard';
@@ -93,6 +97,10 @@ export default function ProjectDetail({
           <SagaPainPoints2 />
           <SagaTasksSection />
           <SagaSolutionSection />
+          <SagaAutonomousDrone />
+          <SagaDroneVideo />
+          <SagaFourProD />
+          <SagaSketch />
         </>
       ) : (
         <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />

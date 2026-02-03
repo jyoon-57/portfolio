@@ -1267,4 +1267,178 @@
   .solutionTextHeavy {
     font-size: 28px;
   }
+  .solutionTextHeavy {
+    font-size: 28px;
+  }
+}
+
+/* Autonomous Drone Section */
+.autonomousDroneSection {
+  margin-top: 20rem; /* Default spacing if unrelated to context logic */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  display: flex;
+  justify-content: center;
+  padding: 0 26.1rem;
+  box-sizing: border-box;
+}
+
+.autonomousContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.autonomousTitle {
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 5.5rem; /* 55px (titleHeavy size) */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.autonomousBodyGroup {
+  margin-top: 3.8rem; /* 38px */
+  display: flex;
+  gap: 2.6rem; /* 26px */
+  align-items: flex-start;
+}
+
+.autonomousBodyLeft {
+  width: 44.1rem; /* 441px */
+  color: #1e1e1e; /* Standard Regular Font Color */
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.69;
+  margin: 0;
+}
+
+.autonomousBodyRight {
+  width: 44.1rem; /* 441px */
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  line-height: 1.69;
+  margin: 0;
+
+  /* Squeeze text to fit in 3 lines */
+  letter-spacing: -0.02rem;
+
+  /* Justified text to fill width */
+  text-align: justify;
+  text-justify: inter-word; /* Enhances justification */
+}
+
+@media (max-width: 768px) {
+  .autonomousDroneSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .autonomousTitle {
+    font-size: 28px; /* Mobile Fix */
+  }
+
+  .autonomousBodyGroup {
+    flex-direction: column;
+    margin-top: 2rem;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .autonomousBodyLeft,
+  .autonomousBodyRight {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+/* Drone Video Section */
+.droneVideoSection {
+  margin-top: 34rem; /* 340px */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  aspect-ratio: 16 / 9; /* Assume content is 16:9 */
+  background: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.droneVideoIframe {
+  width: 112%; /* Scale up aggressively to crop YouTube UI */
+  height: 112%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .droneVideoSection {
+    margin-top: 10rem;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Four ProD Section */
+.fourProdSection {
+  margin-top: 45.7rem; /* 457px */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.fourProdImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .fourProdSection {
+    margin-top: 10rem;
+  }
+}
+
+/* Sketch Section */
+.sketchSection {
+  margin-top: 38.7rem; /* 387px */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.sketchImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .sketchSection {
+    margin-top: 10rem;
+  }
 }
