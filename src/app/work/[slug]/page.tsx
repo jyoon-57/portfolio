@@ -6,6 +6,12 @@ import Image from 'next/image';
 import { projects } from '@/data/projects';
 import ProjectHero from '@/components/project/shared/ProjectHero';
 import SagaHero from '@/components/project/saga/SagaHero';
+import SagaContribution from '@/components/project/saga/SagaContribution';
+import SagaResultText from '@/components/project/saga/SagaResultText';
+import SagaVideoSection from '@/components/project/saga/SagaVideoSection';
+import SagaContextSection from '@/components/project/saga/SagaContextSection';
+import SagaGapText from '@/components/project/saga/SagaGapText';
+import SagaPainPoints1 from '@/components/project/saga/SagaPainPoints1';
 import ProjectMedia from '@/components/project/shared/ProjectMedia';
 import ProjectInfo from '@/components/project/shared/ProjectInfo';
 import SectionStandard from '@/components/project/shared/SectionStandard';
@@ -73,7 +79,15 @@ export default function ProjectDetail({
 
       {/* Intro Section */}
       {slug === 'saga' ? (
-        <SagaHero />
+        <>
+          <SagaHero />
+          <SagaContribution />
+          <SagaResultText />
+          <SagaVideoSection />
+          <SagaContextSection />
+          <SagaGapText />
+          <SagaPainPoints1 />
+        </>
       ) : (
         <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />
       )}
