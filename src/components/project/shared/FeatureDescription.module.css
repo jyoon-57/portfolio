@@ -1,0 +1,57 @@
+/* FeatureDescription.module.css */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.featureText {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+}
+
+.descriptionText {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400; /* Regular / Body style */
+  font-size: 2rem; /* 20px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin-top: 3.8rem; /* 38px gap */
+}
+
+/* Helper for alignment */
+.alignRight {
+  margin-left: auto;
+}
+
+.alignLeft {
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100% !important; /* Force full width on mobile */
+    max-width: 100%;
+  }
+
+  .featureText {
+    font-size: 16px; /* Mobile fixed size */
+  }
+
+  .descriptionText {
+    font-size: 16px; /* Mobile fixed size */
+    margin-top: 2rem;
+    width: 100% !important; /* Force fluid width on mobile */
+  }
+
+  .alignRight,
+  .alignLeft {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

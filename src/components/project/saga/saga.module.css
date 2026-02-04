@@ -1906,3 +1906,441 @@
     width: 100%;
   }
 }
+
+/* On-Device AI Section */
+.onDeviceAISection {
+  margin-top: 34.6rem; /* 346px */
+  width: 100%;
+  padding: 0 26.1rem; /* Global Margins */
+  box-sizing: border-box;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .onDeviceAISection {
+    margin-top: 10rem;
+    padding: 0 20px;
+    flex-direction: column;
+  }
+}
+
+/* On-Device AI Image - Full Width */
+.onDeviceAIImageWrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 6rem; /* 60px gap below text */
+}
+
+.onDeviceAIImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .onDeviceAIImageWrapper {
+    margin-top: 4rem; /* Reduced gap on mobile */
+  }
+}
+
+/* Wall-Mounted Shooting Section */
+.wallMountedSection {
+  margin-top: 52.3rem; /* 523px below On-Device AI Image */
+  width: 100%;
+  padding: 0 26.1rem; /* Global padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 9rem; /* 90px gap between rows */
+}
+
+.wallMountedRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertical center alignment */
+  width: 100%;
+}
+
+.wallMountedTextLeft {
+  flex: 0 0 auto;
+  /* Text aligns to left margin */
+}
+
+.wallMountedRowTopAlign {
+  align-items: flex-start; /* Top alignment for second row */
+}
+
+.wallMountedDescriptionOnly {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem; /* 18px */
+  line-height: 1.69;
+  color: #1e1e1e;
+  margin: 0;
+  width: 47.6rem; /* 476px */
+}
+
+.wallMountedImageRight {
+  flex: 0 0 76.1rem; /* 761px fixed width */
+  margin-right: -26.1rem; /* Stick to right edge */
+}
+
+.wallMountedImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .wallMountedSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+    gap: 6rem; /* Reduced gap on mobile */
+  }
+
+  .wallMountedRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem; /* Gap between text and image on mobile */
+  }
+
+  .wallMountedTextLeft {
+    width: 100%;
+  }
+
+  .wallMountedImageRight {
+    width: 100%;
+    flex: 0 0 auto;
+    margin-right: 0; /* Reset margin */
+  }
+
+  .wallMountedDescriptionOnly {
+    font-size: 16px; /* Fixed size on mobile */
+    width: 100%;
+  }
+}
+
+/* Interview Section */
+.interviewSection {
+  margin-top: 30rem; /* 300px below LiDAR.jpg */
+  width: 100%;
+}
+
+.interviewImageWrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background-image: url(/interview.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensure sufficient vertical height */
+}
+
+.interviewTextOverlay {
+  position: absolute;
+  top: 17rem; /* 170px from top */
+  left: 0;
+  width: 100%;
+  padding: 0 26.1rem; /* Global margins */
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.interviewImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0; /* Hide the img tag, use background instead */
+}
+
+@media (max-width: 768px) {
+  .interviewSection {
+    margin-top: 10rem; /* Reduced gap on mobile */
+  }
+
+  .interviewImageWrapper {
+    min-height: 60vh; /* Adjust height for mobile, sides will be cropped */
+  }
+
+  .interviewTextOverlay {
+    top: 5rem; /* Reduced top spacing on mobile */
+    padding: 0 20px; /* Mobile padding */
+  }
+}
+
+/* Charging Dock Section */
+.chargingDockSection {
+  margin-top: 30rem; /* 300px below interview image */
+  width: 100%;
+  padding: 0 26.1rem; /* Global margins */
+  box-sizing: border-box;
+}
+
+/* Image Row - 82px below text */
+.chargingDockImageRow {
+  margin-top: 8.2rem; /* 82px */
+  display: flex;
+  justify-content: space-between; /* Push images to left and right margins */
+  align-items: flex-start; /* Align tops */
+  width: 100%;
+}
+
+.chargingDockImageLeft {
+  width: 61.6rem; /* 616px - charging_dock_2 */
+  flex-shrink: 0;
+}
+
+.chargingDockImageRight {
+  width: 68.7rem; /* 687px - charging_dock_1 */
+  flex-shrink: 0;
+}
+
+.chargingDockImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .chargingDockSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .chargingDockImageRow {
+    margin-top: 4rem; /* Reduced gap on mobile */
+    flex-direction: column;
+    gap: 3rem; /* Gap between images on mobile */
+  }
+
+  .chargingDockImageLeft,
+  .chargingDockImageRight {
+    width: 100%;
+  }
+}
+
+/* Video Editing Application Section */
+.videoEditingAppSection {
+  margin-top: 70rem; /* 700px below charging_dock_1 image */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #f5f5f5;
+  padding: 25rem 26.1rem 0 26.1rem; /* 250px top padding, 0 bottom padding */
+  box-sizing: border-box;
+}
+
+.videoEditingAppContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to left margin */
+}
+
+.videoEditingAppTitle {
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 5.5rem; /* 55px */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.1; /* 110% */
+  margin: 0;
+}
+
+.videoEditingAppBody {
+  margin-top: 3.8rem; /* 38px below title */
+  width: 42.1rem; /* 421px */
+  color: #000;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.69; /* 169% */
+  margin-bottom: 0;
+}
+
+/* Full-width Image Wrapper */
+.videoEditingAppImageWrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0; /* Directly below text */
+}
+
+.videoEditingAppImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .videoEditingAppSection {
+    margin-top: 10rem;
+    padding: 5rem 20px; /* Reduced padding on mobile */
+  }
+
+  .videoEditingAppTitle {
+    font-size: 32px; /* Fixed size for mobile */
+    line-height: 1.2;
+  }
+
+  .videoEditingAppBody {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 2rem;
+  }
+
+  .videoEditingAppImageWrapper {
+    margin-top: 3rem; /* Small gap on mobile */
+  }
+}
+
+/* Features Section */
+.featuresSection {
+  margin-top: 0; /* No gap - starts right after image */
+  padding-top: 30rem; /* 500px spacing from image */
+  width: 100%;
+  padding-left: 26.1rem;
+  padding-right: 26.1rem;
+  padding-bottom: 0;
+  box-sizing: border-box;
+  background-color: #fff; /* White background */
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for phone images */
+  justify-content: space-between;
+  align-items: flex-start; /* Align tops */
+  gap: 4rem;
+}
+
+/* Left: Subtitle and Title */
+.featuresLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+
+.featuresSubtitle {
+  color: #868686; /* Subtitle color */
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+.featuresTitle {
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 700; /* Bold */
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+/* Right: Numbered List */
+.featuresRight {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* Align to right margin */
+  flex: 0 0 auto;
+}
+
+.featuresList {
+  width: 53.7rem; /* 537px */
+  margin: 0;
+  padding-left: 2rem; /* For numbered list indentation */
+  list-style-position: outside;
+}
+
+.featuresList li {
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69; /* 169% */
+  margin-bottom: 0;
+}
+
+.featuresList li:not(:last-child) {
+  margin-bottom: 0; /* No extra spacing between items */
+}
+
+/* Phone Images - Full width row */
+.phonesWrapper {
+  width: 100%;
+  margin-top: 3.8rem; /* 38px below Features text */
+  display: flex;
+  justify-content: center; /* Center the phones group */
+}
+
+.phonesRow {
+  display: flex;
+  gap: 0; /* No gap between images */
+  justify-content: center;
+}
+
+.phoneImage {
+  width: 37.1rem; /* 371px */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .featuresSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .featuresSubtitle {
+    font-size: 14px;
+  }
+
+  .featuresTitle {
+    font-size: 18px;
+  }
+
+  .featuresRight {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .featuresList {
+    width: 100%;
+    padding-left: 2rem;
+  }
+
+  .featuresList li {
+    font-size: 16px;
+  }
+
+  .phonesWrapper {
+    margin-top: 3rem;
+  }
+
+  .phonesRow {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .phoneImage {
+    width: calc(50% - 0.5rem); /* 2 columns on mobile */
+    max-width: 180px;
+  }
+}

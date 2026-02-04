@@ -23,6 +23,12 @@ import SagaResearchSection from '@/components/project/saga/SagaResearchSection';
 import SagaPrototypingSection from '@/components/project/saga/SagaPrototypingSection';
 import SagaPrototypingImage from '@/components/project/saga/SagaPrototypingImage';
 import SagaPrototypingGallery from '@/components/project/saga/SagaPrototypingGallery';
+import SagaOnDeviceAI from '@/components/project/saga/SagaOnDeviceAI';
+import SagaWallMountedShooting from '@/components/project/saga/SagaWallMountedShooting';
+import SagaInterview from '@/components/project/saga/SagaInterview';
+import SagaChargingDock from '@/components/project/saga/SagaChargingDock';
+import SagaVideoEditingApp from '@/components/project/saga/SagaVideoEditingApp';
+import SagaFeatures from '@/components/project/saga/SagaFeatures';
 import SagaCameraAnimation from '@/components/project/saga/SagaCameraAnimation';
 import SagaProductDetail from '@/components/project/saga/SagaProductDetail';
 import SagaFoldableWing from '@/components/project/saga/SagaFoldableWing';
@@ -115,6 +121,12 @@ export default function ProjectDetail({
           <SagaCameraAnimation />
           <SagaProductDetail />
           <SagaFoldableWing />
+          <SagaOnDeviceAI />
+          <SagaWallMountedShooting />
+          <SagaInterview />
+          <SagaChargingDock />
+          <SagaVideoEditingApp />
+          <SagaFeatures />
         </>
       ) : (
         <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />
