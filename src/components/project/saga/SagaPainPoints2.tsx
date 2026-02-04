@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './saga.module.css';
 import SagaSectionText from './SagaSectionText';
 
@@ -18,37 +19,49 @@ export default function SagaPainPoints2() {
           <div className={styles.pp2Grid}>
             {/* Set 1 */}
             <div className={styles.pp2Set}>
-              <img
+              <Image
                 src="/photo1.png"
                 alt="Happy moments together"
+                width={289}
+                height={289}
                 className={styles.pp2Image}
+                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Happy moments together</p>
             </div>
             {/* Set 2 */}
             <div className={styles.pp2Set}>
-              <img
+              <Image
                 src="/photo2.png"
                 alt="Natural behaviors"
+                width={289}
+                height={289}
                 className={styles.pp2Image}
+                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Natural behaviors</p>
             </div>
             {/* Set 3 */}
             <div className={styles.pp2Set}>
-              <img
+              <Image
                 src="/photo3.png"
                 alt="Inner thoughts & stories"
+                width={289}
+                height={289}
                 className={styles.pp2Image}
+                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Inner thoughts & stories</p>
             </div>
             {/* Set 4 */}
             <div className={styles.pp2Set}>
-              <img
+              <Image
                 src="/photo4.png"
                 alt="Everyday habits"
+                width={289}
+                height={289}
                 className={styles.pp2Image}
+                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Everyday habits</p>
             </div>
@@ -59,10 +72,13 @@ export default function SagaPainPoints2() {
         <div className={styles.pp2Right}>
           <h4 className={styles.pp2RightTitle}>Reality</h4>
           <div className={styles.pp2RightSet}>
-            <img
+            <Image
               src="/freeze.png"
               alt="Freezing up in front of the camera"
+              width={538}
+              height={538}
               className={styles.pp2RightImage}
+              style={{ width: '53.8rem', height: 'auto' }}
             />
             <p className={styles.pp2RightKeyword}>
               Freezing up in front of the camera

@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import styles from './saga.module.css';
 
-export default function SagaDroneVideo() {
+export default function SagaCameraAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -15,7 +15,7 @@ export default function SagaDroneVideo() {
           setIsPlaying(entry.isIntersecting);
         });
       },
-      { threshold: 0.1 }, // Start playing when 10% visible
+      { threshold: 0.1 },
     );
 
     if (containerRef.current) {
@@ -38,11 +38,11 @@ export default function SagaDroneVideo() {
   }, [isPlaying]);
 
   return (
-    <section className={styles.droneVideoSection} ref={containerRef}>
+    <section className={styles.cameraAnimationSection} ref={containerRef}>
       <video
         ref={videoRef}
-        className={styles.droneVideoPlayer}
-        src="/saga_main_animation_render.mp4"
+        className={styles.cameraAnimationPlayer}
+        src="/proD_camera_animation.mp4"
         muted
         loop
         playsInline

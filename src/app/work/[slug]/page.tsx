@@ -19,6 +19,13 @@ import SagaAutonomousDrone from '@/components/project/saga/SagaAutonomousDrone';
 import SagaDroneVideo from '@/components/project/saga/SagaDroneVideo';
 import SagaFourProD from '@/components/project/saga/SagaFourProD';
 import SagaSketch from '@/components/project/saga/SagaSketch';
+import SagaResearchSection from '@/components/project/saga/SagaResearchSection';
+import SagaPrototypingSection from '@/components/project/saga/SagaPrototypingSection';
+import SagaPrototypingImage from '@/components/project/saga/SagaPrototypingImage';
+import SagaPrototypingGallery from '@/components/project/saga/SagaPrototypingGallery';
+import SagaCameraAnimation from '@/components/project/saga/SagaCameraAnimation';
+import SagaProductDetail from '@/components/project/saga/SagaProductDetail';
+import SagaFoldableWing from '@/components/project/saga/SagaFoldableWing';
 import ProjectMedia from '@/components/project/shared/ProjectMedia';
 import ProjectInfo from '@/components/project/shared/ProjectInfo';
 import SectionStandard from '@/components/project/shared/SectionStandard';
@@ -101,6 +108,13 @@ export default function ProjectDetail({
           <SagaDroneVideo />
           <SagaFourProD />
           <SagaSketch />
+          <SagaResearchSection />
+          <SagaPrototypingSection />
+          <SagaPrototypingImage />
+          <SagaPrototypingGallery />
+          <SagaCameraAnimation />
+          <SagaProductDetail />
+          <SagaFoldableWing />
         </>
       ) : (
         <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />

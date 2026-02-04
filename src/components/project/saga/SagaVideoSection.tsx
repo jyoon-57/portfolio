@@ -26,10 +26,14 @@ export default function SagaVideoSection() {
               onClick={() => setIsPlaying(true)}
             >
               {/* Thumbnail - Using YouTube's max resolution thumbnail */}
-              <img
+              <Image
                 src="https://img.youtube.com/vi/vaQ14P90VKk/maxresdefault.jpg"
                 alt="Video Thumbnail"
+                width={1280}
+                height={720}
                 className={styles.videoThumbnail}
+                style={{ width: '100%', height: '100%' }}
+                priority={false}
               />
               <div className={styles.playButton}>
                 <svg

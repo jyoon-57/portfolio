@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './saga.module.css';
 import SagaSectionText from './SagaSectionText';
 
@@ -9,10 +10,13 @@ export default function SagaPainPoints1() {
         <div className={styles.painPointsTopRow}>
           {/* Set 1 */}
           <div className={styles.iconSet}>
-            <img
+            <Image
               src="/woman_icon.png"
               alt="Woman Icon"
+              width={160}
+              height={160}
               className={styles.iconImage}
+              style={{ width: '16rem', height: 'auto' }}
             />
             <p className={styles.iconKeyword}>
               Taking photos while
@@ -23,10 +27,13 @@ export default function SagaPainPoints1() {
 
           {/* Set 2 */}
           <div className={styles.iconSet}>
-            <img
+            <Image
               src="/man_icon.png"
               alt="Man Icon"
+              width={160}
+              height={160}
               className={styles.iconImage}
+              style={{ width: '16rem', height: 'auto' }}
             />
             <p className={styles.iconKeyword}>
               A way to remember

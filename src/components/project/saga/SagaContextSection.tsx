@@ -41,20 +41,26 @@ export default function SagaContextSection() {
             {/* Graph Set 1 */}
             <div className={styles.graphSet}>
               <h4 className={styles.graphTitle}>Physical Affection Graph</h4>
-              <img
+              <Image
                 src="/graph1.png"
                 alt="Physical Affection Graph"
+                width={318}
+                height={200}
                 className={styles.graphImage}
+                style={{ width: '31.8rem', height: 'auto' }}
               />
             </div>
 
             {/* Graph Set 2 */}
             <div className={styles.graphSet}>
               <h4 className={styles.graphTitle}>Emotional Bond Graph</h4>
-              <img
+              <Image
                 src="/graph2.png"
                 alt="Emotional Bond Graph"
+                width={318}
+                height={200}
                 className={styles.graphImage}
+                style={{ width: '31.8rem', height: 'auto' }}
               />
             </div>
           </div>

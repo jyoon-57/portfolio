@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './saga.module.css';
 
 export default function SagaSolutionSection() {
@@ -6,10 +7,13 @@ export default function SagaSolutionSection() {
       <h3 className={styles.solutionTitle}>SOLUTION</h3>
 
       <div className={styles.solutionLogo}>
-        <img
+        <Image
           src="/saga_logo_simple.png"
           alt="Saga Logo Simple"
+          width={212}
+          height={100}
           className={styles.solutionLogoImg}
+          style={{ width: '21.2rem', height: 'auto' }}
         />
       </div>
 

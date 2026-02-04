@@ -1380,14 +1380,13 @@
   align-items: center;
 }
 
-.droneVideoIframe {
-  width: 112%; /* Scale up aggressively to crop YouTube UI */
-  height: 112%;
+.droneVideoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  top: 0;
+  left: 0;
 }
 
 @media (max-width: 768px) {
@@ -1440,5 +1439,470 @@
 @media (max-width: 768px) {
   .sketchSection {
     margin-top: 10rem;
+  }
+}
+
+/* Research Section */
+.researchWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything */
+}
+
+/* Upper Part specific */
+.researchSection {
+  margin-top: 45rem; /* 450px */
+  padding: 0 26.1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Lower Part Container */
+.methodsContainer {
+  margin-top: 11.5rem; /* 115px */
+  display: flex;
+  flex-direction: column;
+  gap: 9.3rem; /* 93px gap between rows */
+  width: 100%;
+  padding: 0 26.1rem;
+  align-items: center; /* Center rows */
+}
+
+.methodsRow {
+  display: flex;
+  justify-content: center;
+  gap: 5.2rem; /* 52px gap between items */
+}
+
+.methodItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30.8rem; /* Body width 308px constraint, effectively item width */
+}
+
+.iconWrapper {
+  /* Icon 72px */
+  width: 7.2rem;
+  height: 7.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.methodIcon {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.methodTitle {
+  margin-top: 4.5rem; /* 45px below icon */
+  margin-bottom: 0;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2.5rem; /* 25px */
+  font-weight: 700;
+  line-height: 1.69;
+  color: #1e1e1e;
+  text-align: center;
+}
+
+.methodBody {
+  margin-top: 0; /* Title immediately followed by body */
+  width: 30.8rem; /* 308px */
+  font-family: 'Helvetica Light', sans-serif;
+  font-size: 1.8rem; /* 18px */
+  font-weight: 400;
+  line-height: 1.69;
+  color: #1e1e1e;
+  text-align: center;
+  white-space: pre-wrap; /* Handle newlines */
+}
+
+@media (max-width: 768px) {
+  .researchSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .methodsContainer {
+    margin-top: 6rem;
+    padding: 0 20px;
+    gap: 4rem;
+  }
+
+  .methodsRow {
+    flex-wrap: wrap; /* Stack on mobile */
+    gap: 4rem;
+  }
+
+  .methodItem {
+    width: 100%; /* Full width on mobile or smaller chunks? */
+    /* Let's keep it responsive but readable. Maybe 50% or 100%. User asked for appropriate response. */
+    /* Given these are small blocks, 2 per row could work, or 1. */
+    max-width: 45%;
+  }
+
+  .methodTitle {
+    font-size: 18px;
+    margin-top: 2rem;
+  }
+
+  .methodBody {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .iconWrapper {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Prototyping Section */
+.prototypingSection {
+  margin-top: 50rem; /* 500px */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 26.1rem;
+  box-sizing: border-box;
+}
+
+.prototypingContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 99.7rem; /* 455*2 + 87 = 997px */
+  max-width: 100%;
+}
+
+.prototypingTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  color: #868686; /* Subtitle color */
+  line-height: 1.69;
+  margin: 0 0 3.8rem 0; /* 38px spacing */
+}
+
+.prototypingBodyRow {
+  display: flex;
+  gap: 8.7rem; /* 87px */
+  width: 100%;
+}
+
+.prototypingBodyText {
+  width: 45.5rem; /* 455px */
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 1.69;
+}
+
+@media (max-width: 768px) {
+  .prototypingSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .prototypingContent {
+    width: 100%;
+  }
+
+  .prototypingBodyRow {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .prototypingBodyText {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .prototypingTitle {
+    font-size: 16px;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Prototyping Image Section */
+.prototypingImageSection {
+  margin-top: 50rem; /* 500px */
+  width: 100%;
+  display: block;
+  line-height: 0; /* Remove potential extra space below image */
+}
+
+.fullWidthImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .prototypingImageSection {
+    margin-top: 10rem;
+  }
+}
+
+/* Prototyping Gallery Section */
+.prototypingGallerySection {
+  margin-top: 35rem; /* 350px */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 26.1rem; /* Global padding */
+  box-sizing: border-box;
+}
+
+.galleryGrid {
+  display: flex;
+  gap: 4.7rem; /* 47px horizontal gap */
+  width: 87.5%; /* Matches total visual width (50% + 37.5%) to center content */
+  margin: 0 auto;
+}
+
+.galleryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 4.7rem;
+}
+
+/* Left Column (Full Size) */
+.galleryColumn:first-child {
+  flex: 100; /* Ratio 4 */
+}
+
+/* Right Column (75% Size) */
+.galleryColumn:last-child {
+  flex: 75; /* Ratio 3 */
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.galleryImageSmall {
+  /* Class no longer needed with column sizing, but keeping for safety if referenced */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .prototypingGallerySection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .galleryGrid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .galleryColumn {
+    gap: 2rem;
+  }
+}
+
+/* Camera Animation Section */
+.cameraAnimationSection {
+  margin-top: 65rem; /* 650px */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.cameraAnimationPlayer {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .cameraAnimationSection {
+    margin-top: 10rem;
+  }
+}
+
+/* Product Detail Section */
+.productDetailSection {
+  margin-top: 31.5rem; /* 315px (115px + 200px) */
+  padding: 0 26.1rem; /* Global left/right padding (261px) */
+}
+
+.productDetailImageWrapper {
+  margin-top: 15.5rem; /* 155px */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.productDetailImage {
+  width: 89.1rem; /* 891px */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .productDetailSection {
+    margin-top: 10rem;
+    padding: 0 20px;
+  }
+
+  .productDetailImageWrapper {
+    margin-top: 5rem;
+  }
+
+  .productDetailImage {
+    width: 100%;
+  }
+}
+
+/* Foldable Wing & Strap Section */
+.foldableWingSection {
+  margin-top: 31.5rem; /* 315px */
+}
+
+/* Text Row - contains both text groups side by side */
+.foldableWingTextRow {
+  display: flex;
+  gap: 4.7rem; /* Same gap as image columns */
+  padding: 0 26.1rem; /* Global padding */
+  justify-content: space-between;
+  margin-bottom: 6.8rem; /* 68px to images */
+}
+
+.foldableWingTextRow .foldableWingTextGroup:first-child {
+  flex: 0 0 auto;
+  width: 62.8rem; /* Match column1 width */
+}
+
+.foldableWingTextRow .foldableWingTextGroup:last-child {
+  flex: 0 0 auto;
+  width: 67.5rem; /* Match column2 width */
+}
+
+/* Image Grid - contains image columns */
+.foldableWingGrid {
+  display: flex;
+  gap: 4.7rem; /* Same gap as gallery (47px) */
+  padding: 0 26.1rem; /* Global padding */
+  justify-content: space-between;
+  align-items: flex-start; /* Align columns to top */
+}
+
+.foldableWingColumn1 {
+  display: flex;
+  flex-direction: column;
+  gap: 4.7rem; /* Same gap between images as between columns */
+  flex: 0 0 62.8rem; /* 628px fixed width */
+}
+
+.foldableWingColumn2 {
+  flex: 0 0 67.5rem; /* 675px fixed width */
+  display: flex;
+  flex-direction: column;
+}
+
+.foldableWingTextGroup {
+  /* No margin-bottom needed here as it's in textRow */
+}
+
+.foldableWingTitle {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  font-size: 2rem; /* 20px */
+  line-height: 169%;
+  color: #1e1e1e;
+  margin-bottom: 3.7rem; /* 37px gap */
+}
+
+.foldableWingBody {
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 2rem; /* 20px */
+  line-height: 169%;
+  color: #1e1e1e;
+  width: 34.6rem; /* 346px */
+}
+
+.foldableWingImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.foldableWingImageLarge {
+  width: 100%;
+  height: auto; /* Changed from 100% to maintain aspect ratio */
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .foldableWingSection {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Unwrap containers to allow direct ordering of children */
+  .foldableWingTextRow {
+    display: contents;
+  }
+
+  .foldableWingGrid {
+    display: contents;
+  }
+
+  /* Order: 1. First text, 2. Column1 images, 3. Second text, 4. Column2 image */
+  .foldableWingTextRow .foldableWingTextGroup:first-child {
+    order: 1;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+  }
+
+  .foldableWingColumn1 {
+    order: 2;
+    gap: 2rem;
+    flex: 1;
+    margin-bottom: 5rem;
+    padding: 0 20px;
+  }
+
+  .foldableWingTextRow .foldableWingTextGroup:last-child {
+    order: 3;
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 0 20px;
+  }
+
+  .foldableWingColumn2 {
+    order: 4;
+    flex: 1;
+    padding: 0 20px;
+  }
+
+  .foldableWingTitle {
+    font-size: 18px;
+    margin-bottom: 2rem;
+  }
+
+  .foldableWingBody {
+    font-size: 16px;
+    width: 100%;
   }
 }
