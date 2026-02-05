@@ -29,6 +29,7 @@ import SagaInterview from '@/components/project/saga/SagaInterview';
 import SagaChargingDock from '@/components/project/saga/SagaChargingDock';
 import SagaVideoEditingApp from '@/components/project/saga/SagaVideoEditingApp';
 import SagaFeatures from '@/components/project/saga/SagaFeatures';
+import SagaEpilogue from '@/components/project/saga/SagaEpilogue';
 import SagaCameraAnimation from '@/components/project/saga/SagaCameraAnimation';
 import SagaProductDetail from '@/components/project/saga/SagaProductDetail';
 import SagaFoldableWing from '@/components/project/saga/SagaFoldableWing';
@@ -127,6 +128,7 @@ export default function ProjectDetail({
           <SagaChargingDock />
           <SagaVideoEditingApp />
           <SagaFeatures />
+          <SagaEpilogue />
         </>
       ) : (
         <ProjectHero intro={project.intro} onScrollClick={scrollToVideo} />

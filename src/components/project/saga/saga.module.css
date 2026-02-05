@@ -200,11 +200,11 @@
 
   /* 데스크탑 이미지 숨김 */
   .mainImageDesktop {
-    display: none;
+    display: none !important;
   }
   /* 모바일 이미지 표시 및 중앙 정렬 */
   .mainImageMobile {
-    display: block;
+    display: block !important;
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -2342,5 +2342,359 @@
   .phoneImage {
     width: calc(50% - 0.5rem); /* 2 columns on mobile */
     max-width: 180px;
+  }
+}
+
+/* Package & Rent Images Group */
+.packageRentWrapper {
+  width: 100%;
+  margin-top: 37rem; /* 539px below phone images */
+  display: flex;
+  justify-content: center; /* Center the group */
+}
+
+.packageRentGroup {
+  position: relative;
+  /* Adjusted width for visual centering */
+  width: 101.7rem;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Rent Section - Left */
+.rentSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.rentTextWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 3.5rem; /* Move 20px to the right */
+}
+
+.rentSubtitle {
+  color: #868686; /* Subtitle color */
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+.rentTitle {
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 700; /* Bold */
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+.rentDescription {
+  width: 34.9rem; /* 349px */
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69; /* 169% */
+  margin: 3.8rem 0 0 0; /* 38px above */
+}
+
+.rentImageWrapper {
+  margin-top: 7.5rem; /* 75px below description */
+  position: relative;
+  z-index: 2; /* Above package */
+}
+
+.rentImage {
+  width: 49rem; /* 490px */
+  height: auto;
+  display: block;
+}
+
+/* Package Section - Right */
+.packageSection {
+  position: absolute;
+  top: 53.7rem; /* Aligned with package image position (537px below rent image) */
+  left: 47rem; /* rent(49rem) - overlap(2rem) = 47rem */
+  display: flex;
+  flex-direction: column;
+}
+
+.packageTextWrapper {
+  margin-left: 10rem; /* Move 20px to the right */
+  margin-bottom: 7.7rem; /* 77px above image */
+}
+
+.packageDescription {
+  width: 34.9rem; /* 349px */
+  color: #1e1e1e;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 2rem; /* 20px */
+  font-weight: 400; /* Regular */
+  line-height: 1.69; /* 169% */
+  margin: 0;
+}
+
+.packageImageWrapper {
+  position: relative;
+  z-index: 1; /* Below rent */
+}
+
+.packageImage {
+  width: 62.7rem; /* 627px */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .packageRentWrapper {
+    margin-top: 10rem;
+  }
+
+  .packageRentGroup {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5rem;
+  }
+
+  .rentSection {
+    width: 100%;
+  }
+
+  .rentSubtitle,
+  .rentTitle {
+    font-size: 16px;
+  }
+
+  .rentDescription {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 2rem;
+  }
+
+  .rentImageWrapper {
+    margin-top: 3rem;
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .rentImage {
+    width: 100%;
+  }
+
+  .packageSection {
+    position: static;
+    width: 100%;
+  }
+
+  .packageTextWrapper {
+    margin-bottom: 3rem;
+  }
+
+  .packageDescription {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .packageImageWrapper {
+    position: static;
+    top: 0;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .packageImage {
+    width: 100%;
+  }
+}
+
+/* Epilogue Section */
+.epilogueSection {
+  margin-top: 70rem; /* Adjusted to start 300px below package image bottom */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #f5f5f5; /* Gray background */
+  padding: 30rem 26.1rem 0 26.1rem; /* No bottom padding, end5 is last element */
+  box-sizing: border-box;
+}
+
+.epilogueGrid {
+  display: grid;
+  grid-template-columns: 56.5rem 56.5rem; /* Fixed to image width (565px each) */
+  gap: 8.3rem; /* 83px gap */
+  max-width: 100%;
+  justify-content: center; /* Center the grid */
+}
+
+.epilogueImageWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* End4 image - positioned 350px lower */
+.epilogueImageEnd4 {
+  margin-top: 35rem; /* Additional 350px down */
+}
+
+.epilogueImage {
+  width: 56.5rem; /* 565px */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .epilogueSection {
+    margin-top: 10rem;
+    padding: 5rem 20px 0 20px; /* No bottom padding on mobile */
+  }
+
+  .epilogueGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .epilogueImageEnd4 {
+    margin-top: 0; /* Reset on mobile */
+  }
+
+  .epilogueImage {
+    width: 100%; /* Scale to mobile width */
+  }
+}
+
+/* End5 Full-Width Image Section */
+.end5Wrapper {
+  margin-top: 47.9rem; /* 479px below end4 */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-bottom: 0; /* No space below end5 */
+}
+
+.end5ImageContainer {
+  position: relative;
+  width: 100%;
+  height: auto; /* Auto height to preserve aspect ratio */
+}
+
+.end5Image {
+  width: 100%;
+  height: auto; /* Auto height, no cropping */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .end5Wrapper {
+    margin-top: 10rem;
+  }
+
+  .end5ImageContainer {
+    height: 50rem; /* Fixed height on mobile (500px) */
+    overflow: hidden;
+  }
+
+  .end5Image {
+    width: 100%; /* Full width */
+    height: 100%; /* Fill container height */
+    object-fit: cover; /* Crop sides to maintain height */
+    object-position: center;
+  }
+}
+
+/* End5 Overlay Group 1 */
+.end5OverlayGroup {
+  position: absolute;
+  bottom: 10.7rem; /* 107px from bottom of end5 image */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.sagaLogoWrapper {
+  margin-bottom: 0.8rem; /* 8px below logo */
+}
+
+.sagaLogoWhite {
+  width: 25.1rem; /* 251px */
+  height: auto;
+  display: block;
+}
+
+.end5Text1 {
+  color: #fff;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5rem; /* 15px */
+  font-weight: 400;
+  line-height: 1.69; /* 169% */
+  margin: 0 0 0.5rem 0; /* 5px below */
+}
+
+.end5Text2 {
+  color: #fff;
+  text-align: center;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 1.5rem; /* 15px */
+  font-weight: 400;
+  line-height: 1.69; /* 169% */
+  margin: 0 0 8.7rem 0; /* 87px below */
+  white-space: nowrap; /* Prevent line break */
+}
+
+.end5LogoGroup {
+  display: flex;
+  gap: 7.4rem; /* 74px gap between logos */
+  align-items: flex-end; /* Align logos to bottom */
+}
+
+.logoWhite {
+  width: 20.1rem; /* 201px */
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .end5OverlayGroup {
+    bottom: 5rem;
+    padding: 0 20px;
+  }
+
+  .sagaLogoWhite {
+    width: 150px;
+  }
+
+  .end5Text1,
+  .end5Text2 {
+    font-size: 12px;
+  }
+
+  .end5Text2 {
+    margin-bottom: 3rem;
+    white-space: normal; /* Allow line breaks on mobile */
+  }
+
+  .end5LogoGroup {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .logoWhite {
+    width: 120px;
   }
 }
