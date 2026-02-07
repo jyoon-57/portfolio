@@ -660,7 +660,7 @@
   .graphSet {
     align-items: flex-start;
     width: 100%;
-    max-width: 210px; /* Force pixel value to prevent REM scaling blowup */
+    max-width: 210px; /* Reduced specific max-width for mobile as per request */
   }
 
   .graphTitle {

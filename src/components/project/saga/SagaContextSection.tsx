@@ -47,7 +47,6 @@ export default function SagaContextSection() {
                 width={318}
                 height={200}
                 className={styles.graphImage}
-                style={{ width: '31.8rem', height: 'auto' }}
               />
             </div>
 
@@ -60,7 +59,6 @@ export default function SagaContextSection() {
                 width={318}
                 height={200}
                 className={styles.graphImage}
-                style={{ width: '31.8rem', height: 'auto' }}
               />
             </div>
           </div>
