@@ -1,18 +1,24 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './saga.module.css';
 
 export default function SagaCameraAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsPlaying(entry.isIntersecting);
+          if (videoRef.current) {
+            if (entry.isIntersecting) {
+              videoRef.current.play().catch((error) => {
+                console.error('Video play failed:', error);
+              });
+            } else {
+              videoRef.current.pause();
+            }
+          }
         });
       },
       { threshold: 0.1 },
@@ -22,26 +28,13 @@ export default function SagaCameraAnimation() {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
+    // Ensure video is muted for autoplay to work
     if (videoRef.current) {
       videoRef.current.muted = true;
     }
+
+    return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-
-    if (isPlaying) {
-      videoRef.current.play().catch((error) => {
-        console.error('Video play failed:', error);
-      });
-    } else {
-      videoRef.current.pause();
-    }
-  }, [isPlaying]);
 
   return (
     <section className={styles.cameraAnimationSection} ref={containerRef}>
