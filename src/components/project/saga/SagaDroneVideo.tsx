@@ -6,6 +6,7 @@ import styles from './saga.module.css';
 export default function SagaDroneVideo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -18,14 +19,27 @@ export default function SagaDroneVideo() {
             if (video.paused) {
               const playPromise = video.play();
               if (playPromise !== undefined) {
+                playPromiseRef.current = playPromise;
                 playPromise.catch((error) => {
-                  console.error('Video play failed:', error);
+                  if (error.name !== 'AbortError') {
+                    console.error('Video play failed:', error);
+                  }
                 });
               }
             }
           } else {
-            // Only pause if not already paused
-            if (!video.paused) {
+            // Un-intersecting: Pause safely
+            if (playPromiseRef.current) {
+              playPromiseRef.current
+                .then(() => {
+                  if (!video.paused) {
+                    video.pause();
+                  }
+                })
+                .catch(() => {
+                  // Play failed (e.g. aborted), so it's likely already paused.
+                });
+            } else if (!video.paused) {
               video.pause();
             }
           }
