@@ -25,7 +25,6 @@ export default function SagaPainPoints2() {
                 width={289}
                 height={289}
                 className={styles.pp2Image}
-                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Happy moments together</p>
             </div>
@@ -37,7 +36,6 @@ export default function SagaPainPoints2() {
                 width={289}
                 height={289}
                 className={styles.pp2Image}
-                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Natural behaviors</p>
             </div>
@@ -49,7 +47,6 @@ export default function SagaPainPoints2() {
                 width={289}
                 height={289}
                 className={styles.pp2Image}
-                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Inner thoughts & stories</p>
             </div>
@@ -61,7 +58,6 @@ export default function SagaPainPoints2() {
                 width={289}
                 height={289}
                 className={styles.pp2Image}
-                style={{ width: '28.9rem', height: 'auto' }}
               />
               <p className={styles.pp2Keyword}>Everyday habits</p>
             </div>
@@ -78,7 +74,6 @@ export default function SagaPainPoints2() {
               width={538}
               height={538}
               className={styles.pp2RightImage}
-              style={{ width: '53.8rem', height: 'auto' }}
             />
             <p className={styles.pp2RightKeyword}>
               Freezing up in front of the camera

@@ -1006,61 +1006,65 @@
 
   .pp2Left {
     width: 100%;
+    align-items: flex-start;
   }
 
   .pp2Title {
-    font-size: 16px; /* Mobile Fix */
+    font-size: 16px;
     margin-bottom: 2rem;
   }
 
   .pp2Grid {
-    grid-template-columns: 1fr; /* Stack on mobile? or Keep 2x2. User didn't specify, but 289px*2 > mobile width usually. 
-                                   Let's check width. 289*2 + 20 ~ 600px. Too wide for mobile (375px). 
-                                   So stack or shrink. */
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1.5rem;
-    row-gap: 3rem;
+    column-gap: 20px;
+    row-gap: 30px;
+    width: 100%;
+  }
+
+  .pp2Set {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .pp2Image {
-    width: 100%; /* Fluid width for grid cells */
+    width: 100%; /* Fluid */
     height: auto;
-    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
   }
 
   .pp2Keyword {
-    font-size: 14px; /* Mobile Fix */
+    font-size: 14px;
     margin-top: 1rem;
+    align-self: flex-start;
   }
 
   /* Right Part Mobile */
   .pp2Right {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .pp2RightTitle {
-    font-size: 16px; /* Mobile Fix */
+    font-size: 16px;
     margin-bottom: 2rem;
+    align-self: flex-start;
   }
 
   .pp2RightSet {
     width: 100%;
+    align-items: flex-start;
   }
 
   .pp2RightImage {
-    width: 100%; /* Full width on mobile */
+    width: 100%; /* Fluid */
     height: auto;
-    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
   }
 
   .pp2RightKeyword {
     font-size: 16px;
     margin-top: 2rem;
-  }
-  .pp2RightKeyword {
-    font-size: 16px;
-    margin-top: 2rem;
+    align-self: flex-start;
   }
 }
 
@@ -1814,10 +1818,6 @@
   flex: 0 0 67.5rem; /* 675px fixed width */
   display: flex;
   flex-direction: column;
-}
-
-.foldableWingTextGroup {
-  /* No margin-bottom needed here as it's in textRow */
 }
 
 .foldableWingTitle {
