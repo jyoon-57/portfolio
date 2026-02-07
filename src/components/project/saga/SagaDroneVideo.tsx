@@ -63,7 +63,6 @@ export default function SagaDroneVideo() {
         className={styles.droneVideoPlayer}
         poster="/saga_main.jpg"
         muted
-        autoPlay
         loop
         playsInline
         preload="metadata"

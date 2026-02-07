@@ -6,7 +6,8 @@ import styles from './saga.module.css';
 export default function SagaCameraAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const playPromiseRef = useRef<Promise<void> | null>(null);
+  const playTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -15,31 +16,24 @@ export default function SagaCameraAnimation() {
           if (!video) return;
 
           if (entry.isIntersecting) {
-            // Only play if paused to avoid multiple play calls
-            if (video.paused) {
-              const playPromise = video.play();
-              if (playPromise !== undefined) {
-                playPromiseRef.current = playPromise;
-                playPromise.catch((error) => {
+            // Debounce play: wait 200ms to ensure stable visibility
+            if (playTimeoutRef.current) clearTimeout(playTimeoutRef.current);
+            playTimeoutRef.current = setTimeout(() => {
+              if (video.paused) {
+                video.play().catch((error) => {
                   if (error.name !== 'AbortError') {
                     console.error('Video play failed:', error);
                   }
                 });
               }
-            }
+            }, 200);
           } else {
-            // Un-intersecting: Pause safely
-            if (playPromiseRef.current) {
-              playPromiseRef.current
-                .then(() => {
-                  if (!video.paused) {
-                    video.pause();
-                  }
-                })
-                .catch(() => {
-                  // Play failed (e.g. aborted), so it's likely already paused.
-                });
-            } else if (!video.paused) {
+            // Un-intersecting: Clear pending play and pause immediately
+            if (playTimeoutRef.current) {
+              clearTimeout(playTimeoutRef.current);
+              playTimeoutRef.current = null;
+            }
+            if (!video.paused) {
               video.pause();
             }
           }
@@ -52,12 +46,14 @@ export default function SagaCameraAnimation() {
       observer.observe(containerRef.current);
     }
 
-    // Ensure video is muted for autoplay to work
     if (videoRef.current) {
       videoRef.current.muted = true;
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (playTimeoutRef.current) clearTimeout(playTimeoutRef.current);
+    };
   }, []);
 
   return (
@@ -67,7 +63,6 @@ export default function SagaCameraAnimation() {
         className={styles.cameraAnimationPlayer}
         poster="/product_detail.jpg"
         muted
-        autoPlay
         loop
         playsInline
         preload="metadata"
