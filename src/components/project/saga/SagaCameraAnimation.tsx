@@ -26,6 +26,12 @@ export default function SagaCameraAnimation() {
   }, []);
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
+  }, []);
+
+  useEffect(() => {
     if (!videoRef.current) return;
 
     if (isPlaying) {
@@ -44,6 +50,7 @@ export default function SagaCameraAnimation() {
         className={styles.cameraAnimationPlayer}
         src="/proD_camera_animation.mp4"
         muted
+        autoPlay
         loop
         playsInline
       />

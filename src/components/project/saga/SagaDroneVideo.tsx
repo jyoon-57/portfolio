@@ -26,6 +26,12 @@ export default function SagaDroneVideo() {
   }, []);
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
+  }, []);
+
+  useEffect(() => {
     if (!videoRef.current) return;
 
     if (isPlaying) {
@@ -44,6 +50,7 @@ export default function SagaDroneVideo() {
         className={styles.droneVideoPlayer}
         src="/saga_main_animation_render.mp4"
         muted
+        autoPlay
         loop
         playsInline
       />
