@@ -10,13 +10,23 @@ export default function SagaCameraAnimation() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (videoRef.current) {
-            if (entry.isIntersecting) {
-              videoRef.current.play().catch((error) => {
-                console.error('Video play failed:', error);
-              });
-            } else {
-              videoRef.current.pause();
+          const video = videoRef.current;
+          if (!video) return;
+
+          if (entry.isIntersecting) {
+            // Only play if paused to avoid multiple play calls
+            if (video.paused) {
+              const playPromise = video.play();
+              if (playPromise !== undefined) {
+                playPromise.catch((error) => {
+                  console.error('Video play failed:', error);
+                });
+              }
+            }
+          } else {
+            // Only pause if not already paused
+            if (!video.paused) {
+              video.pause();
             }
           }
         });
