@@ -1,12 +1,11 @@
 'use client';
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './saga.module.css';
 
 export default function SagaCameraAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -48,30 +47,9 @@ export default function SagaCameraAnimation() {
         loop
         playsInline
         preload="metadata"
-        onError={(e) => {
-          const err = e.currentTarget.error;
-          setErrorMsg(
-            err ? `Error ${err.code}: ${err.message}` : 'Unknown Error',
-          );
-        }}
       >
         <source src="/proD_camera_animation.mp4" type="video/mp4" />
       </video>
-      {errorMsg && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            color: 'red',
-            background: 'rgba(0,0,0,0.8)',
-            padding: '10px',
-            zIndex: 9999,
-          }}
-        >
-          VIDEO ERROR: {errorMsg}
-        </div>
-      )}
     </section>
   );
 }
