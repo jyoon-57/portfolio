@@ -109,14 +109,13 @@ export default function SagaCameraAnimation() {
       <video
         ref={videoRef}
         className={styles.cameraAnimationPlayer}
+        src="/proD_camera_animation.mp4"
         poster="/product_detail.jpg"
         muted
         loop
         playsInline
         preload="metadata"
-      >
-        <source src="/proD_camera_animation.mp4" type="video/mp4" />
-      </video>
+      />
     </section>
   );
 }

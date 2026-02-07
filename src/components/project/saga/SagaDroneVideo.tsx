@@ -109,14 +109,13 @@ export default function SagaDroneVideo() {
       <video
         ref={videoRef}
         className={styles.droneVideoPlayer}
+        src="/saga_main_animation_render.mp4"
         poster="/saga_main.jpg"
         muted
         loop
         playsInline
         preload="metadata"
-      >
-        <source src="/saga_main_animation_render.mp4" type="video/mp4" />
-      </video>
+      />
     </section>
   );
 }
