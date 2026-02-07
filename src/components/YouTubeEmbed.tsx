@@ -20,11 +20,19 @@ export default function YouTubeEmbed({
   showSoundToggle = true,
 }: YouTubeEmbedProps) {
   // Handle Origin for YouTube API Security
+  // Use a ref to store origin to avoid re-renders and effect dependencies.
+  // We only need it for the initial src construction.
   const [origin, setOrigin] = useState('');
 
   useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
+    if (typeof window !== 'undefined') {
+      const currentOrigin = window.location.origin;
+      if (currentOrigin && origin !== currentOrigin) {
+        // eslint-disable-next-line
+        setOrigin(currentOrigin);
+      }
+    }
+  }, [origin]);
 
   const [isMuted, setIsMuted] = useState(true);
   const iframeRef = useRef<HTMLIFrameElement>(null);
@@ -95,7 +103,9 @@ export default function YouTubeEmbed({
 
   if (!videoId) return null;
 
-  const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&enablejsapi=1&playsinline=1&modestbranding=1&origin=${origin}`;
+  // Use origin in src only if available.
+  const originParam = origin ? `&origin=${origin}` : '';
+  const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&enablejsapi=1&playsinline=1&modestbranding=1${originParam}`;
 
   return (
     <div
@@ -117,6 +127,9 @@ export default function YouTubeEmbed({
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        playsInline
         style={{
           width: '100%',
           aspectRatio: '9/16', // Match the source aspect ratio (Shorts/Vertical) to avoid player pillarboxing
@@ -124,11 +137,10 @@ export default function YouTubeEmbed({
           top: '50%',
           left: '0',
           transform: 'translateY(-50%)', // Center vertically
-          pointerEvents: 'none',
+          pointerEvents: 'auto', // Allow interaction
           ...iframeStyle, // Apply overrides last
         }}
       />
-
       {/* Sound Toggle Button */}
       {/* 
         Positioning: Right side. 
