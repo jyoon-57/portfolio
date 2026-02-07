@@ -71,7 +71,6 @@ export default function SagaCameraAnimation() {
         ref={videoRef}
         className={styles.cameraAnimationPlayer}
         src="/proD_camera_v2.mp4"
-        poster="/product_detail.jpg"
         muted
         loop
         playsInline

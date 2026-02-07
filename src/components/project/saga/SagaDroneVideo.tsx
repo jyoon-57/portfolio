@@ -62,7 +62,6 @@ export default function SagaDroneVideo() {
         ref={videoRef}
         className={styles.droneVideoPlayer}
         src="/saga_main_v2.mp4"
-        poster="/saga_main.jpg"
         muted
         loop
         playsInline
