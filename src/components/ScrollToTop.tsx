@@ -163,7 +163,8 @@ export default function ScrollToTop() {
         if (
           src.includes('blue_magritte') ||
           src.includes('pigeon') ||
-          src.includes('magritte_ending')
+          src.includes('magritte_ending') ||
+          src.includes('end5')
         ) {
           setArrowColor(ALT_COLOR);
           foundColor = true;
@@ -177,7 +178,8 @@ export default function ScrollToTop() {
           url &&
           (url.includes('blue_magritte') ||
             url.includes('pigeon') ||
-            url.includes('magritte_ending'))
+            url.includes('magritte_ending') ||
+            url.includes('end5'))
         ) {
           setArrowColor(ALT_COLOR);
           foundColor = true;

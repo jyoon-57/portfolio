@@ -63,6 +63,7 @@
   font-size: 4rem;
   line-height: 1.69;
   color: var(--foreground);
+  width: 81.8rem;
 }
 
 /* Title Row at Bottom of Intro */
@@ -158,6 +159,40 @@
   color: var(--secondary);
 }
 
+/* Footer */
+.footer {
+  margin-top: 20rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.footerCredit {
+  color: #aeaeae;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 400;
+  font-size: 4.5rem; /* 45px */
+  line-height: 1.69;
+  text-align: center;
+  letter-spacing: 0.45px;
+}
+
+.boldText {
+  font-weight: 700;
+}
+
+.footerCopyright {
+  color: #868686;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  line-height: 1.69;
+  text-align: center;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .wrapper {
@@ -193,6 +228,7 @@
   .hero p {
     font-size: 24px;
     line-height: 1.4;
+    width: 100%;
   }
 
   .titleRow {
@@ -220,5 +256,19 @@
   .projectDate {
     font-size: 14px; /* Reverted to 14px */
     line-height: 1.4;
+  }
+
+  .footer {
+    margin-top: 100px;
+    padding-bottom: 40px;
+    gap: 5px;
+  }
+
+  .footerCredit {
+    font-size: 24px; /* Scaled up from 18px approx 1.3x */
+  }
+
+  .footerCopyright {
+    font-size: 14px;
   }
 }

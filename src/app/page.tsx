@@ -49,11 +49,11 @@ export default function Home() {
       <section className={styles.introSection}>
         <header className={styles.header}>
           <div className={styles.logo}>
-            <a href="/">
+            <Link href="/">
               Jaeyoon
               <br />
               Lee
-            </a>
+            </Link>
           </div>
           <nav className={styles.nav}>
             <a href="#about">About</a>
@@ -63,11 +63,11 @@ export default function Home() {
 
         <div className={styles.hero}>
           <p>
-            Jaeyoon Lee is a designer exploring the
+            Jaeyoon Lee (Jyoon Lee) is a designer
             <br />
-            next stage of human-computer interaction,
+            exploring the next stage of human-computer
             <br />
-            grounded in industrial design.
+            interaction, grounded in industrial design.
           </p>
         </div>
 
@@ -135,7 +135,13 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <p className={styles.footerCredit}>
+          Site built by <span className={styles.boldText}>Jaeyoon Lee</span>{' '}
+          with <span className={styles.boldText}>Antigravity</span>
+        </p>
+        <p className={styles.footerCopyright}>© 2026 Jaeyoon Lee</p>
+      </footer>
     </div>
   );
 }
