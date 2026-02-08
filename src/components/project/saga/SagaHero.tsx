@@ -153,13 +153,13 @@ export default function SagaHero() {
             <div className={styles.infoBlock}>
               <h3 className={styles.infoTitle}>TEAM SAGA</h3>
               <p className={styles.infoContent}>
-                Jae-yoon, Lee
+                Jaeyoon Lee
                 <br />
-                Sun-min, Park
+                Sunmin Park
                 <br />
-                Young-bin, Kim
+                Youngbin Kim
                 <br />
-                Ha-on, Jo
+                Haon Jo
               </p>
             </div>
           </div>
