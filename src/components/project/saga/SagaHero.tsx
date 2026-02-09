@@ -126,8 +126,8 @@ export default function SagaHero() {
               shared with loved ones.
             </p>
             <p>
-              The user is free from any tasks throughout the production process.
-              To allow families to forget about the camera and focus entirely on
+              The user is free from any tasks throughout the production process
+              to allow families to forget about the camera and focus entirely on
               being present with one another.
             </p>
           </div>
