@@ -146,7 +146,7 @@ function applyPinchVolume(handed, sm) {
           ],
         },
         {
-          title: 'Seek forward/backward',
+          title: 'Fast forward / Rewind',
           desc: 'right-hand wrist-twist with thumb and little finger extended.',
           videoSrc: 'https://youtube.com/shorts/Jh6BlNldvOE',
           codeBlocks: [
@@ -215,7 +215,7 @@ function detectYawJog(handed, sm) {
           ],
         },
         {
-          title: 'Previous/next track',
+          title: 'Previous / Next track',
           desc: 'right-hand horizontal movement',
           videoSrc: 'https://youtube.com/shorts/ARux1GRyNZk',
           codeBlocks: [
@@ -302,7 +302,7 @@ function detectYawJog(handed, sm) {
           ],
         },
         {
-          title: 'Play/Pause',
+          title: 'Play / Pause',
           desc: 'right-hand fist/open',
           videoSrc: 'https://youtube.com/shorts/F04cIGWnhxI',
           codeBlocks: [
