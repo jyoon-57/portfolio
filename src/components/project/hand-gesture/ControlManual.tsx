@@ -110,8 +110,8 @@ export default function ControlManual({ section }: ControlManualProps) {
                     aspectRatio: 'unset', // Let wrapper control ratio
                   }}
                   iframeStyle={
-                    item.title === 'Previous/next track' ||
-                    item.title === 'Play/Pause'
+                    item.title === 'Previous / Next track' ||
+                    item.title === 'Play / Pause'
                       ? { transform: 'translateY(-50%) scale(1.02)' }
                       : undefined
                   }
