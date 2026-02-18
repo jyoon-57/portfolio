@@ -82,7 +82,7 @@ export default function SagaEpilogue() {
 
             {/* Text 2 */}
             <p className={styles.end5Text2}>
-              SAGA ® FAMILY SOCIAL WELLNES PROJECT / HONGIK UNIVERSUTY
+              SAGA ® FAMILY SOCIAL WELLNES PROJECT / HONGIK UNIVERSITY
               INDUSTRIAL DESIGN AND SAMSUNG LIFENOLOGY LAB
             </p>
 
